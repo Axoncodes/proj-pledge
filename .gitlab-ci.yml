@@ -1,7 +1,0 @@
-stages:
-    - clone
-
-clone-job:
-    stage: clone
-    script:
-        - git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git
