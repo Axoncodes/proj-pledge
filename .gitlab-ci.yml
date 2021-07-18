@@ -1,19 +1,7 @@
 stages:
-    - start
     - clone
-    - done
-
-start-job:
-    stage: start
-    script:
-        - echo "starting"
 
 clone-job:
     stage: clone
     script:
         - git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git
-
-done-job:
-    stage: done
-    script:
-        - echo "done"
