@@ -1,4 +1,4 @@
-Source of the boilerplate: https://github.com/react-boilerplate/react-boilerplate
+Source of the boilerplate -> https://github.com/react-boilerplate/react-boilerplate
 
 ## Quick start
 
