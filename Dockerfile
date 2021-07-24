@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=8080
+ENV PORT=140
 
 EXPOSE 8080
 
