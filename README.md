@@ -12,3 +12,9 @@
 
 1.  Once the cloning is complete, you can buold the image by `docker build -t <name>/<project_name>:<project_version> .`
 2.  Now to run the image execute `docker run -p <local>:140 <image_id>`
+
+
+
+
+notes:
+    using superagent for flexible api handling
