@@ -1,28 +1,15 @@
-#register {
-    display: grid;
-}
-#register>.inner {
-    width: 40%;
-    max-width: 650px;
-    min-width: 400px;
-    background-color: #fff;
-    margin: 55px auto;
-    padding: 55px 74px;
-    border-radius: 1em;
-    position: relative;
-}
-#register_form .field .block {
+.field .block {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
 }
-#register_form .field label {
+.field label {
     display: grid;
     grid-template-columns: max-content auto;
     column-gap: 22px;
 }
-#register_form .field .image {
+.field .image {
     background-color: #47e3a13b;
     border-radius: 1em;
     width: 48px;
@@ -30,14 +17,15 @@
     display: grid;
     place-content: center;
 }
-#register_form .field input {
+.field input {
     border: none;
     border-bottom: 2px solid #F3F3F3;
     outline: none;
     font-size: 14px;
     padding: 8px 0;
+    width: 100%;
 }
-#register_form .field .block p {
+.field .block p {
     margin: 5px 0;
     margin-bottom: -1px;
     text-transform: uppercase;
@@ -45,53 +33,80 @@
     color: #202046;
     font-size: 12px;
 }
-#register_form .field input::placeholder {
+.field input::placeholder {
     color: #9CA2AA;
     font-weight: 300;
 }
-#register_form .field {
+.field {
     margin: 15px 0;
+    margin-bottom: 0;
 }
-#register_form .card {
+.card {
     display: grid;
     grid-template-columns: auto auto;
-    margin-bottom: -16px;
     column-gap: 5%;
 }
-#register_form .field p.terms a {
+.field p.terms a {
     color: #47E3A1;
     text-decoration: none;
     font-size: 13px;
 }
-#register_form .field p.terms {
+.field p.terms {
     color: #9CA2AA;
     font-size: 12px;
     display: grid;
     grid-column: 2;
     text-transform: inherit;
 }
-#register_form .field label.terms .block {
+.field label.terms .block {
     display: grid;
     grid-auto-flow: column;
 }
-#register_form .field .terms input {
+.field .terms input {
     margin: 3px 10px;
     width: 14px;
     height: 14px;
     margin-left: 0;
 }
 
-#register_form .field .submit input {
-    background-color: #47E3A1;
-    color: #fff;
-    width: 100%;
-    height: 52px;
-    border-radius: 0.9em;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
+
+
+
+
+/* invalid */
+.field.invalid .image {
+    background-color: #f4433633;
 }
-#register_form .field label.submit {
-    width: 100%;
-    display: unset;
+.field.invalid .block p {
+    color: #f44336;
+}
+.field.invalid input {
+    border-color: #f4433659;
+}
+.field.invalid .block p.title {
+    display: none;
+}
+.field .block p.message {
+    display: none;
+}
+.field.invalid .block p.message {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .field input {
+        font-size: 14px!important;
+    }
+    .field p {
+        font-size: 11px!important;
+    }
+    .field .image object {
+        width: 23px;
+        height: auto;
+    }
+    .field .image {
+        width: 44px;
+        height: 44px;
+    }
 }

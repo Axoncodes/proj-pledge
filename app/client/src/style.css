@@ -5,9 +5,11 @@ body {margin: 0}
 #sectionroot {
     font-family: 'roboto', system-ui;
     background-color: #8d8d8d;
+    min-height: 100vh;
 }
 
-/* tablet */
-@media (max-width: 769px) {
-
+@media (max-width: 768px) {
+    #sectionroot {
+        background-color: #fff;
+    }
 }

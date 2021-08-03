@@ -29,5 +29,15 @@
 #alaternative {
     row-gap: 16px;
     display: grid;
+    margin-top: 15px;
 }
 
+
+
+
+@media (max-width: 768px) {
+    #alaternative .item {
+        padding: 4px;
+        font-size: 14px;
+    }
+}
