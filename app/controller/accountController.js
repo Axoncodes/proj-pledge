@@ -121,6 +121,8 @@ const logout = async () => {
 
 
 const register = async (firstName, lastName, email, password1, password2) => {
+
+  await logout();
   
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
