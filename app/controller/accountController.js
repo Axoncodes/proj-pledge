@@ -183,7 +183,7 @@ const googleLogin = async (accesstoken) => {
     "https://papp.rastava.com/api/google/",
     {
       access_token: accesstoken,
-      code: "google"
+      // code: "google"
     }
   );
   console.log("res", res);
