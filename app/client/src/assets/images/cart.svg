@@ -1,0 +1,10 @@
+<svg id="Icon_Button_Large" data-name="Icon Button / Large" xmlns="http://www.w3.org/2000/svg" width="40.606" height="40.668" viewBox="0 0 40.606 40.668">
+  <rect id="Icon_Button_Large_Background_" data-name="Icon Button / Large (Background)" width="40.606" height="40.668" fill="none"/>
+  <rect id="Rectangle" width="40.606" height="40.668" rx="12" fill="#47e3a1" opacity="0.22"/>
+  <g id="Card" transform="translate(10.983 11.014)">
+    <rect id="Card_Background_" data-name="Card (Background)" width="18.64" height="18.64" fill="none"/>
+    <g id="_7_Credit_card" data-name="7 Credit card" transform="translate(1.553 3.107)">
+      <path id="Fill_153" data-name="Fill 153" d="M13.915,12.426H1.618A1.676,1.676,0,0,1,0,10.7V1.726A1.676,1.676,0,0,1,1.618,0h12.3a1.676,1.676,0,0,1,1.618,1.726V10.7A1.676,1.676,0,0,1,13.915,12.426ZM11,8.63a.692.692,0,0,0,0,1.38h1.618a.692.692,0,0,0,0-1.38ZM2.913,2.416a.671.671,0,0,0-.647.69.671.671,0,0,0,.647.69h9.708a.671.671,0,0,0,.647-.69.671.671,0,0,0-.647-.69Z" transform="translate(0)" fill="#47e3a1"/>
+    </g>
+  </g>
+</svg>

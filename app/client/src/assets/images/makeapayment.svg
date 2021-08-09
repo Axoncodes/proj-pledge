@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.046" height="52.128" viewBox="0 0 64.046 52.128">
+  <g id="_18" data-name="18" transform="translate(-2.648 -0.907)">
+    <g id="Credit_Card_1" data-name="Credit Card 1" transform="translate(10.589 15.803)">
+      <path id="Vector" d="M50.654,0a4.171,4.171,0,0,1,4.183,4.16V33.072a4.171,4.171,0,0,1-4.183,4.16H4.183A4.171,4.171,0,0,1,0,33.072V4.16A4.175,4.175,0,0,1,4.183,0Z" fill="#4e30a1"/>
+    </g>
+    <g id="Credit_Card" data-name="Credit Card" transform="translate(2.648 8.45)">
+      <path id="Vector-2" data-name="Vector" d="M50.661,0a4.171,4.171,0,0,1,4.183,4.16V33.072a4.171,4.171,0,0,1-4.183,4.16H4.183A4.171,4.171,0,0,1,0,33.072V4.16A4.171,4.171,0,0,1,4.183,0Z" fill="#32c5ff"/>
+      <path id="Vector-3" data-name="Vector" d="M5.863,11.663a5.831,5.831,0,1,1,5.863-5.831A5.847,5.847,0,0,1,5.863,11.663Z" transform="translate(7.495 6.657)" fill="#fff" opacity="0.4"/>
+      <path id="Vector-4" data-name="Vector" d="M20.983,0a1.159,1.159,0,0,1,1.159,1.153,1.159,1.159,0,0,1-1.159,1.153H1.159A1.153,1.153,0,1,1,1.159,0Z" transform="translate(6.939 23.673)" fill="#fff" opacity="0.4"/>
+      <path id="Vector-5" data-name="Vector" d="M20.983,0a1.159,1.159,0,0,1,1.159,1.153,1.159,1.159,0,0,1-1.159,1.153H1.159A1.153,1.153,0,1,1,1.159,0Z" transform="translate(6.939 28.277)" fill="#fff" opacity="0.4"/>
+      <path id="Vector-6" data-name="Vector" d="M0,5.081A1.024,1.024,0,0,0,1.029,6.1H9.483a1.024,1.024,0,0,0,1.029-1.023V1.023A1.024,1.024,0,0,0,9.483,0H1.029A1.029,1.029,0,0,0,0,1.023Z" transform="translate(38.489 26.92)" fill="#fff" opacity="0.4"/>
+    </g>
+    <g id="Credit_Card_Icon" data-name="Credit Card Icon" transform="translate(44.189 0.907)">
+      <path id="Vector-7" data-name="Vector" d="M11.253,22.384A11.192,11.192,0,1,1,22.505,11.192,11.223,11.223,0,0,1,11.253,22.384Z" fill="#26b0e6"/>
+      <g id="Group" transform="translate(3.792 6.391)">
+        <path id="Vector-8" data-name="Vector" d="M0,.716A.718.718,0,0,1,.72,0H14.2a.718.718,0,0,1,.72.716v.737H0Z" fill="#fff"/>
+        <path id="Vector-9" data-name="Vector" d="M14.2,5.852H.72A.719.719,0,0,1,0,5.136V0H14.921V5.136A.719.719,0,0,1,14.2,5.852ZM11.589,3.247h0a1.255,1.255,0,1,0,0-1.733,1.254,1.254,0,1,0,0,1.733Z" transform="translate(0 3.758)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

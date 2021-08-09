@@ -1,0 +1,121 @@
+
+#searchform {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #0000;
+    border: none;
+    outline: none;
+}
+#searchform_cover {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content 1fr;
+    place-items: center;
+    background-color: #f2f2f2;
+    border-radius: .2em;
+    transition: all .3s;
+    position: relative;
+    z-index: 9;
+}
+#search_icon {
+    width: 21px;
+    fill: #7d7d7d;
+    padding: 0 14px;
+}
+
+#pageTitle p {
+    margin: 0;
+    text-transform: capitalize;
+    place-self: center;
+}
+#pageTitle a svg {
+    height: 100%;
+    width: 23px;
+    fill: #454545;
+}
+#pageTitle {
+    display: grid;
+    column-gap: 10px;
+    grid-auto-flow: column;
+    width: fit-content;
+    width: -moz-fit-content;
+    place-content: center;
+    padding: 11px 0;
+    margin: 9px 0;
+}
+
+#searchform_cover:active {
+    transform: scale(.99);
+}
+#search_result {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #fff;
+    display: grid;
+    grid-auto-flow: row;
+    box-sizing: border-box;
+    transition: all .3s;
+    z-index: 9;
+}
+
+
+#search_result .category {
+    color: #686868;
+    font-size: .8rem;
+    padding-bottom: 4px;
+}
+#search_result .item {
+    padding: 7px 11px;
+    display: grid;
+    border-radius: .3em;
+    grid-template-columns: min-content auto;
+    column-gap: 10px;
+    place-items: baseline;
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+#search_result .item:hover {
+    background-color: #fff;
+}
+#search_result .item span {
+    font-size: .8rem;
+    color: #3c3c3c;
+    font-weight: 400;
+    overflow: hidden;
+    height: 15px;
+    transform: translateY(2px);
+}
+#search_result .item svg {
+    width: 22px;
+    height: auto;
+}
+
+#search_result > .none {
+    display: none;
+}
+#search_result > .show {
+    display: grid;
+    padding: 15px;
+}
+
+
+#search_result > div {
+    max-height: 0;
+    transition: all .3s;
+    background-color: #f2f2f2;
+}
+
+
+/* tablet */
+@media (max-width: 769px) {
+    #searchbar {
+        display: none;
+    }
+    #header {
+        padding: 0 22px;
+    }
+}

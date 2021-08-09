@@ -1,0 +1,76 @@
+#profile {
+    display: grid;
+    row-gap: 20px;
+    /* box-shadow: 6px 8px 20px #1e1e1e12;
+    border-radius: 1em;
+    padding: 16px; */
+}
+#profile .info {
+    display: grid;
+    grid-auto-flow: column;
+    width: fit-content;
+    column-gap: 10px;
+}
+#profile .info > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#profile .info .text {
+    display: grid;
+    height: 100%;
+    place-self: center;
+    place-content: center;
+    row-gap: 4px;
+}
+#profile .info .text p {
+    margin: 0;
+}
+#profile .info .text .dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--green);
+    display: inline-flex;
+    border-radius: 50%;
+    transform: translateY(-3px);
+    margin: 0 6px;
+}
+#profile .info .text .highlight {
+    color: var(--green);
+    display: grid;
+    grid-auto-flow: column;
+    place-items: baseline;
+    font-size: 16px;
+}
+#profile .info .text > p {
+    color: #9CA2AA;
+    font-size: 13px;
+    height: fit-content;
+}
+
+
+/* bios */
+#bios {
+    padding: 0 60px;
+}
+#bios > span {
+    font-size: 12px;
+    color: #202046;
+}
+#bios .text {
+    color: #202046;
+    line-height: 27px;
+    font-size: 14px;
+}
+#bios > span {
+    font-size: 12px;
+    color: #202046;
+}
+
+
+/* boxes */
+#profile .boxes {
+    display: flex;
+    padding: 0 60px;
+    column-gap: 20%;
+}

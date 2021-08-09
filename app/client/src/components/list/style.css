@@ -1,0 +1,40 @@
+#list .head p {
+    margin: 0;
+}
+#list .head {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+#list hr {
+    border: 1px solid #F3F3F3;
+}
+#list .head p {
+    color: #202046;
+}
+#list .head a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 13px;
+}
+#list .body .item span {
+    font-size: 11px;
+    color: #20204675;
+}
+#list .body .item p {
+    margin: 0;
+}
+
+#list .body .item {
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: 15px;
+}
+#list .body .item .data {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+#list .body .item .data .box:nth-child(2) {
+    text-align: right;
+}

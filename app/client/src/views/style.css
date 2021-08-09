@@ -15,6 +15,7 @@
     position: relative;
 }
 
+
 /* reponse */
 .response {
     display: flex;
@@ -54,9 +55,36 @@
 
 
 
+/* full view mode */
+.fullview {
+    background-color: #fff;
+    grid-template-columns: 180px 1fr;
+    display: grid;
+    column-gap: 10%;
+    padding: 30px;
+}
+
+.fullview main {
+    display: grid;
+    row-gap: 24px;
+}
+@media (max-width: 768px) {
+    #sectionroot .fullview {
+        background-color: #fff;
+        grid-template-columns: unset;
+        /* padding: 0; */
+    }
+}
 
 
 
+/* boxshadow */
+.boxshadow{
+    box-shadow: 6px 8px 20px #1e1e1e12;
+    border-radius: 1em;
+    padding: 16px;
+    /* padding-bottom: 25px; */
+}
 
 
 

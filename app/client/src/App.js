@@ -32,6 +32,12 @@ import './style.css';
 export default function App() {
   // account.login("letschool10@gmail.com", "stringdasdasd")
 
+  /**
+   * @mode (fullsize, wide)
+   * The @fullsize basically contains sidebar and main page (like home or payment, ...)
+   * The @wide is like popup but no sidebar included
+   */
+
   return(
     <section id="sectionroot">
       <Router>

@@ -1,0 +1,42 @@
+.quickBox .inner {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    place-items: center;
+    width: fit-content;
+}
+.quickBox.wide {
+    /* width: 100%; */
+}
+.quickBox.padding {
+    padding: 30px;
+}
+.quickBox.short {
+    /* width: 165px; */
+}
+.quickBox p {
+    margin: 0;
+    font-size: 14px;
+}
+
+main > .boxes {
+    display: grid;
+    grid-template-columns: 230px 230px 1fr;
+    column-gap: 20px;
+}
+
+@media (max-width:1100px) {
+    main > .boxes {
+        grid-template-columns: unset;
+        row-gap: 14px;
+    }
+    .quickBox.short {
+        display: grid;
+        grid-row: 1;
+    }
+    .quickBox.wide {
+        display: grid;
+        grid-row: 2;
+        grid-column: 1/3;
+    }
+}

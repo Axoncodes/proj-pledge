@@ -40,3 +40,11 @@
     width: 20px;
     cursor: pointer;
 }
+
+/* fullview for breadcrumb */
+.fullview #breadcrumb p.current {
+    font-size: 18px!important;
+}
+.fullview #breadcrumb .inner_cover {
+    row-gap: 0;
+}
