@@ -109,3 +109,9 @@
     box-shadow: none!important;
     color: #3b3b3b!important;
 }
+
+
+
+.highlight {
+    color: var(--green);
+}
