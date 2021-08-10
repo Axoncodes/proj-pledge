@@ -8,6 +8,7 @@
 }
 #list hr {
     border: 1px solid #F3F3F3;
+    background-color: #F3F3F3;
 }
 #list .head p {
     color: #202046;
