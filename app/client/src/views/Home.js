@@ -13,57 +13,62 @@ import Profile from '../components/profile/Profile';
 
 export default function Home() {
 
-	const [auth, setAuth] = useState(false)
+	const [auth, setAuth] = useState(null)
 	let history = useHistory();
 
-	// useEffect(()=>{
+	const authenticate = async () => {
+		setAuth(await account.authorised());
+	}
 
-	// 	var myHeaders = new Headers();
-	// 	myHeaders.append("accept", "application/json");
-	// 	myHeaders.append("Content-Type", "application/json");
-
-	// 	let req = new Request(
-	// 		'https://papp.rastava.com/api/auth/', 
-	// 		{
-	// 			mode: 'cors',
-	// 			credentials: 'include',
-	// 			method: 'GET',
-	// 			headers: myHeaders
-	// 		}
-	// 	);
-		
-	// 	fetch(req)
-	// 	.then(response => response.json())
-	// 	.then(result => {result.detail=="Verified"?true:history.push("/signin")})
-
-	// },[auth])
+	useEffect(()=>{
+		authenticate()
+	}, [])
 
 
 
 	function login() {
-		return <Login />
+		history.push({
+			pathname: "/signin",
+			state: {  // location state
+				backto: "/", 
+			},
+		})
 	}
-	function home_view() {
+	function view() {
 		return(
-			<p>home</p>
+			<section className="fullview" id="Home">
+				<Sidebar />
+				<main>
+					<Header />
+					<Breadcrumb current="Overview" />
+					<Profile />
+					<section className="boxes">
+						<Box style="padding boxshadow short" text="New Pledge Proposal" icon="newproposal.svg"/>
+						<Box style="padding boxshadow short" text="Statements and Documents" icon="statement.svg"/>
+						<Box style="padding boxshadow wide" text="Make A Payment" icon="makeapayment.svg"/>
+					</section>
+					<List style="boxshadow" title="Pledges" altText="All Pledges" altLink="/pledges" />
+				</main>
+			</section>
 		)
 	}
 
 
-	return(
-		<section className="fullview" id="Home">
-			<Sidebar />
-			<main>
-				<Header />
-				<Breadcrumb current="Overview" />
-				<Profile />
-				<section className="boxes">
-					<Box style="padding boxshadow short" text="New Pledge Proposal" icon="newproposal.svg"/>
-					<Box style="padding boxshadow short" text="Statements and Documents" icon="statement.svg"/>
-					<Box style="padding boxshadow wide" text="Make A Payment" icon="makeapayment.svg"/>
-				</section>
-				<List style="boxshadow" title="Pledges" altText="All Pledges" altLink="/pledges" />
-			</main>
-		</section>
-	)
+	const load = () =>{
+		if(auth === null){
+			return "loading..."
+		}else if(auth === true){
+			return view()
+		}else if(auth === false){
+			 login()
+			 return "signin"
+		}else{
+			console.log(auth);
+			return <p>{auth}</p>;
+		}
+	}
+	return load()
+
+
+
 }

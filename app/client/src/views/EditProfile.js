@@ -60,5 +60,4 @@ export default function EditProfile() {
             </main>
         </section>
     )
-    
 }

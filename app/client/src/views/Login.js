@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Redirect, Link, useHistory } from 'react-router-dom';
+import { Route, Redirect, Link, useHistory, useLocation  } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 // import FacebookLogin from 'react-facebook-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
@@ -15,10 +15,11 @@ import './style.css';
 // CTRL
 import { account } from '../../../controller/accountController';
 
-export default function Login () {
+export default function Login ({backto}) {
 
-  let history = useHistory();
-
+  const history = useHistory();
+  const location = useLocation();
+  
   const [inputForm, setInputForm] = useState({
     email_address: "",
     password: ""
@@ -36,24 +37,28 @@ export default function Login () {
   }
 
   const handleSubmit = async event => {
-    console.log(event.target);
     event.preventDefault()
     const response = await account.login(
       inputForm["email_address"],
       inputForm["password"],
     )
+
+    console.log("response", response);
     
     if(response.status != 200) {
-      console.log(response.json)
+      console.log("fail", response.message)
       var result={};
       for(var i=0; i<Object.keys(response.json).length; i++)
       result[Object.keys(response.json)[i]] = Object.values(response.json)[i][0]
       setFormErr(result);
     } else {
-      console.log(response.status);
-      // return <Home />
-      history.push("/")
-      // setRedirect(true)
+      console.log(response.message);
+      if(location.state){
+        console.log(location.state.backto);
+        history.push(location.state.backto)
+      }else{
+        history.push("/")
+      }
     }
     
   }

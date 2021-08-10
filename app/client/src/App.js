@@ -10,7 +10,7 @@ import PasswordReset from './views/PasswordReset';
 import EditProfile from './views/EditProfile';
 
 // component
-// import { PrivateRoute } from './components/routes/privateRoute/PrivateRoute';
+import { PrivateRoute } from './components/routes/privateRoute/PrivateRoute';
 
 // css
 import './style.css';
@@ -28,21 +28,13 @@ import './style.css';
     If the app doesn't validate the user as authorised,
     the user will be taken to login page(view).
 */
-
-
 export default function App() {
-  // account.login("letschool10@gmail.com", "stringdasdasd")
-
-  /**
-   * @mode (fullsize, wide)
-   * The @fullsize basically contains sidebar and main page (like home or payment, ...)
-   * The @wide is like popup but no sidebar included
-   */
 
   return(
     <section id="sectionroot">
       <Router>
         <Switch>
+
           <Route exact path="/" component={Home} />
           <Route path="/signin" component={Login} />
           <Route path="/signup" component={Register} />
@@ -53,4 +45,5 @@ export default function App() {
       </Router>
     </section>
   )
+  
 }

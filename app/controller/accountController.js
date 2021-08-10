@@ -19,11 +19,15 @@ const authorised = async () => {
   
   const response = await fetch(req)
   const json = await response.json();
-  return json.detail=="Verified"?true:false;
-  // return {
-  //   json: access,
-  //   status: response.status
-  // };
+  const auth = json.data.detail=="Verified"?true:false
+  console.log(auth);
+  // return auth;
+
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(auth);
+    }, 1000);
+  });
 
 }
 
@@ -56,8 +60,9 @@ const login = async (user, pass) => {
   const response = await fetch(req)
   const json = await response.json();
   return {
-    json: json,
-    status: response.status
+    json: json.data,
+    status: json.status,
+    message: json.message
   };
 
 }
