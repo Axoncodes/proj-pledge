@@ -115,3 +115,11 @@
 .highlight {
     color: var(--green);
 }
+
+.txtbutton {
+    color: var(--green);
+    cursor: pointer;
+}
+.txtbutton:hover {
+    color: var(--greenDarker);
+}

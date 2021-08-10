@@ -31,7 +31,7 @@ export default function Profile() {
                     {/* bios: Here we either show the full text or convert the string to array to cut it down based on the words and then convert back to string  based on the state of readmore! */}
                     {readMore?bios:bios.split(" ").slice(0, 20).join(" ")}
                     {/* read more button: here we handle the text of the readmore button  */}
-                    <span onClick={readMoreHandler} className="highlight"> {readMore?"read less":"read more"} </span>
+                    <span onClick={readMoreHandler} className="highlight txtbutton"> {readMore?"read less":"read more"} </span>
                 </section>
             </section>
 
