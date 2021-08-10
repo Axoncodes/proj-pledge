@@ -45,9 +45,8 @@ export default function Breadcrumb({
         ''
       )}
       <div className="inner_cover">
-        <p className="current">{current}</p>
-        <div className="block">
-          {backLink ? (
+        <p className="current">
+         {backLink ? (
             <Link to={backLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,6 +63,8 @@ export default function Breadcrumb({
           ) : (
             ''
           )}
+          {current}</p>
+        <div className="block">
           {displayLogo ? (
             <Link to="/">
               <img alt="" className="logo" src={logo} />
