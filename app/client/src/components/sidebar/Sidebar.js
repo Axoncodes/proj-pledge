@@ -18,9 +18,11 @@ export default function Sidebar() {
           </div>
 
           <section id="userinfo_display">
-            <div className="edit">
-              <img src={edit_icon} />
-            </div>
+            <Link to="/edit-profile">
+              <div className="edit">
+                <img src={edit_icon} />
+              </div>
+            </Link>
 
             <div className="user_img">
               <img src={person} />
