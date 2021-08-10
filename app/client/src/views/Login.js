@@ -63,10 +63,6 @@ export default function Login ({backto}) {
     
   }
 
-  function redirecting() {
-    return <Redirect to="/" />
-  }
-
 
 
   const googleResponse = (response) => {

@@ -2,27 +2,65 @@ import React, {useState, useEffect} from 'react';
 import { useHistory, Route, Redirect } from 'react-router-dom';
 import { account } from '../../../../../controller/accountController';
 
-const test = ({props, Component}) => { 
 
-  // const sasho = async () => {
-  //   console.log("sassho");
-  //   // return await account.authorised()
-  // }
-  <Component {...props} />
-  // sasho()
-  // auth ? (
-  //   <Component {...props} />
-  //   ) : <Redirect to="/signin" />
 
-} 
-
-export const PrivateRoute = ({ component: Component, ...rest }) => (
+export const PrivateRoute = ({ component: Component, ...rest }) => {
   
-    <Route 
+  const [auth, setAuth] = useState(null)
+	let history = useHistory();
+
+	const authenticate = async () => {
+		setAuth(await account.authorised());
+	}
+
+	useEffect(()=>{
+		authenticate()
+	}, [])
+
+	function login() {
+		history.push({
+			pathname: "/signin",
+			state: {  // location state
+				backto: "/", 
+			},
+		})
+	}
+
+  function continueto() {
+    return <Route 
       {...rest} 
-      render={test}
+      render={(props) => 
+          <Component {...props} />
+        }
     />
-);
+  }
+
+  function gobackto() {
+    return <Route 
+      {...rest} 
+      render={(props) => 
+          <Redirect to="/signin" />
+        }
+    />
+  }
+
+
+  const load = () =>{
+		if(auth === null){
+			return "loading..."
+		}else if(auth === true){
+			return continueto()
+		}else if(auth === false){
+      return gobackto()
+		}else{
+			console.log(auth);
+			return <p>error</p>;
+		}
+	}
+	return load()
+
+
+};
 
 
 

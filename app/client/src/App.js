@@ -35,7 +35,7 @@ export default function App() {
       <Router>
         <Switch>
 
-          <Route exact path="/" component={Home} />
+          <PrivateRoute exact path="/" component={Home} />
           <Route path="/signin" component={Login} />
           <Route path="/signup" component={Register} />
           <Route path="/password-recovery" component={ForgotPass} />
