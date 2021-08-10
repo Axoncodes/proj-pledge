@@ -33,12 +33,14 @@ export default function Fields({
   return (
     <div className={`field ${valid?"valid":"invalid"} ${name_name}`}>
       <label className={link ? 'terms' : type == 'submit' ? 'submit' : ''}>
+        {icon?
         <div className="image">
           <object
             aria-label="img"
             data={require(`../../assets/images/${!valid?'red-':''}${icon}`)}
           />
         </div>
+        :<div></div>}
         <div className="block">
           <p className="title">{title}</p>
           <p className="message">{message}</p>
