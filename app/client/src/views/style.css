@@ -83,7 +83,7 @@
     box-shadow: 6px 8px 20px #1e1e1e12;
     border-radius: 1em;
     padding: 16px;
-    /* padding-bottom: 25px; */
+    height: max-content;
 }
 
 
@@ -111,10 +111,10 @@
 }
 
 
-
 .highlight {
     color: var(--green);
 }
+
 
 .txtbutton {
     color: var(--green);
@@ -122,4 +122,16 @@
 }
 .txtbutton:hover {
     color: var(--greenDarker);
+}
+
+
+.disabled_link {
+    cursor: context-menu;
+    text-decoration: none;
+}
+
+
+main > .box {
+    display: grid;
+    grid-auto-flow: column;
 }

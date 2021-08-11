@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import Tooltip from '../tooltip/Tooltip';
+
 // css
 import './style.css';
 
@@ -14,7 +16,7 @@ import './style.css';
  * link: {optional} for cases such as the link in Terms;
  */
 
-export default function Fields({ 
+export default function Field({ 
   icon, 
   title, 
   type, 
@@ -24,14 +26,17 @@ export default function Fields({
   name,
   required,
   valid,
-  message
+  message,
+  customClass,
+  prefix,
+  info,
+  tooltip,
 }) {
 
   const name_name = title.toLowerCase().replace(" ", "_");
   
-
   return (
-    <div className={`field ${valid?"valid":"invalid"} ${name_name}`}>
+    <div className={`field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
       <label className={link ? 'terms' : type == 'submit' ? 'submit' : ''}>
         {icon?
         <div className="image">
@@ -42,22 +47,28 @@ export default function Fields({
         </div>
         :<div></div>}
         <div className="block">
-          <p className="title">{title}</p>
-          <p className="message">{message}</p>
-          <input
-            value={value.name_name}
-            placeholder={title}
-            type={type}
-            onChange={handleInput}
-            name={name?name:name_name}
-          />
+          <div className="inputinfo">
+            <p className="title">{title}</p>
+            <p className="message">{message}</p>
+            {tooltip?<Tooltip content={tooltip} />:''}
+          </div>
+          <div className="inputcard">
+            <p className="inputPrefix">{prefix}</p>
+            <input
+              value={value.name_name}
+              placeholder={title}
+              type={type}
+              onChange={handleInput}
+              name={name?name:name_name}
+            />
+          </div>
         </div>
       </label>
     </div>
   );
 }
 
-Fields.propTypes = {
+Field.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
   type: PropTypes.string,
@@ -68,4 +79,8 @@ Fields.propTypes = {
   required: PropTypes.bool,
   valid: PropTypes.bool,
   message: PropTypes.string,
+  customClass: PropTypes.string,
+  prefix: PropTypes.string,
+  info: PropTypes.string,
+  tooltip: PropTypes.string,
 };

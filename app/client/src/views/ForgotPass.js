@@ -89,8 +89,8 @@ export default function ForgotPass() {
           exit="true"
           exitMode="outer"
           current="Password Recovery"
-          backLink="signin"
-					altLink="signup"
+          backLink="/signin"
+					altLink="/signup"
           altTitle="Sign Up"
         />
         {state?sent():form()}

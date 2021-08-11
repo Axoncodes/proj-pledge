@@ -11,9 +11,10 @@
 #breadcrumb .inner_cover {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     row-gap: 15px;
+    justify-content: space-between;
 }
 #breadcrumb .inner_cover .block {
     display: flex;

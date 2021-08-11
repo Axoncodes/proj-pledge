@@ -5,20 +5,20 @@
     place-items: center;
     width: fit-content;
 }
-.quickBox.wide {
-    /* width: 100%; */
-}
+
 .quickBox.padding {
     padding: 30px;
 }
-.quickBox.short {
-    /* width: 165px; */
-}
+
 .quickBox p {
     margin: 0;
     font-size: 14px;
+    color: #202046;
+    
 }
-
+.quickBox a {
+    text-decoration: none;
+}
 main > .boxes {
     display: grid;
     grid-template-columns: 230px 230px 1fr;

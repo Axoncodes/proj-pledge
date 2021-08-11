@@ -25,7 +25,6 @@ export default function Login ({backto}) {
     password: ""
   });
   const [formErr, setFormErr] = useState({});
-  const [redirect, setRedirect] = useState(false);
 
 
   const handleInput = event => {

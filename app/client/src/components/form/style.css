@@ -3,11 +3,22 @@
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
+    position: relative;
 }
 .field label {
     display: grid;
+}
+.field.icon label {
     grid-template-columns: max-content auto;
     column-gap: 22px;
+}
+.field .block .inputinfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 .field .image {
     background-color: #47e3a13b;
@@ -25,7 +36,7 @@
     padding: 8px 0;
     width: 100%;
 }
-.field .block p {
+.field .block .inputinfo > p {
     margin: 5px 0;
     margin-bottom: -1px;
     text-transform: uppercase;
@@ -33,6 +44,20 @@
     color: #202046;
     font-size: 12px;
 }
+.field .block .inputcard {
+    display: flex;
+}
+.field .block p.inputPrefix {
+    bottom: 0;
+    padding: 8px 0;
+    font-size: 14px;
+    padding-bottom: 12px;
+    margin: 0;
+}
+.field.extrasize p.inputPrefix, .field.extrasize input {
+    font-size: 32px;
+}
+
 .field input::placeholder {
     color: #9CA2AA;
     font-weight: 300;

@@ -119,3 +119,50 @@
         padding: 0 22px;
     }
 }
+
+
+
+/* normalSearchResults */
+#search_result .normalSearchResults {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    max-height: unset;
+    padding: 13px;
+    align-items: center;
+}
+#search_result .normalSearchResults .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+}
+#search_result .normalSearchResults .info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+#search_result .normalSearchResults .info .text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    row-gap: 4px;
+}
+#search_result .normalSearchResults .info .text .name {
+    color: #202046;
+    font-size: 16px;
+}
+#search_result .normalSearchResults .info .text p {
+    margin: 0;
+}
+#search_result .normalSearchResults .info .text .email {
+    color: #9CA2AA;
+    font-size: 13px;
+}
+
+
