@@ -31,7 +31,7 @@ export default function Searchbar() {
     }
 
     useEffect(() => {
-        getSearches() 
+        // getSearches() 
     },[]);
 
 
