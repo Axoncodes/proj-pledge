@@ -10,7 +10,7 @@ import PasswordReset from './views/PasswordReset';
 import EditProfile from './views/EditProfile';
 
 // component
-import { PrivateRoute } from './components/routes/privateRoute/PrivateRoute';
+import {PrivateRoute} from './components/routes/privateRoute/PrivateRoute';
 
 // css
 import './style.css';
@@ -40,7 +40,8 @@ export default function App() {
           <Route path="/signup" component={Register} />
           <Route path="/password-recovery" component={ForgotPass} />
           <Route path="/verify-password/:uid/:token" component={PasswordReset}/>
-          <Route path="/edit-profile" component={EditProfile}/>
+          <PrivateRoute path="/edit-profile" component={EditProfile}/>
+
         </Switch>
       </Router>
     </section>
