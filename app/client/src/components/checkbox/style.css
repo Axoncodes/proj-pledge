@@ -1,0 +1,12 @@
+.customCheckbox svg {
+    fill: white;
+    padding: 4px;
+    background-color: #9CA2AA;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+
+.customCheckbox svg.active {
+    background-color: #47E3A1;
+}

@@ -1,0 +1,22 @@
+.tooltip {
+    position: relative;
+}
+.tooltip .icon {
+    fill: #9CA2AA;
+    width: 15px;
+    height: auto;
+    cursor: pointer;
+}
+.tooltip .content {
+    display: none;
+    margin: 0;
+    background-color: #b7b7b7;
+    padding: 4px;
+    border-radius: 2px;
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+}
+.tooltip:hover .content {
+    display: block;
+}
