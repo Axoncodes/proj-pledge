@@ -65,6 +65,7 @@ export default function IdentitVer() {
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Address Line 2" type="string" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Email Address" type="email" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Phone Number" type="number" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Zip code" type="number" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="ID upload" type="file" />
                   <input className="submit" type="submit" value="Update" />
                 </form>

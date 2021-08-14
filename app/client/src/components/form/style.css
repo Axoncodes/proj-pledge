@@ -12,6 +12,9 @@
     grid-template-columns: max-content auto;
     column-gap: 22px;
 }
+.field.nomargin {
+    margin: 0;
+}
 .field .block .inputinfo {
     display: flex;
     flex-direction: row;

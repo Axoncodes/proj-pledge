@@ -77,9 +77,9 @@ export default function EditProfile() {
                 <form className="boxshadow" onSubmit={handleSubmit} >
                   <div className="card" style={{gridTemplateColumns: "min-content auto"}}>
                     <ProfilePic />
-                    <div>
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="First Name" type="text" />
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Last Name" type="text" />
+                    <div style={{display: "grid", rowGap: "10px"}}>
+                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="First Name" type="text" />
+                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Last Name" type="text" />
                     </div>
                   </div>
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Biography" type="textarea" />

@@ -32,6 +32,7 @@ export default function Field({
   info,
   tooltip,
   options,
+  nomargin,
 }) {
 
   const name_name = title.toLowerCase().replace(" ", "_");
@@ -78,7 +79,7 @@ export default function Field({
   }
   
   return (
-    <div className={`field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
+    <div className={` ${nomargin?'nomargin':''} field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
       <label className={link ? 'terms' : type == 'submit' ? 'submit' : ''}>
         {icon?
         <div className="image">
@@ -96,10 +97,7 @@ export default function Field({
           </div>
           <div className="inputcard">
             <p className="inputPrefix">{prefix}</p>
-              {/* {textbox?textarea():input()}
-              {textbox?textarea():input()} */}
               {display(type)}
-            
           </div>
         </div>
       </label>
@@ -123,4 +121,5 @@ Field.propTypes = {
   info: PropTypes.string,
   tooltip: PropTypes.string,
   options: PropTypes.array,
+  nomargin: PropTypes.bool,
 };
