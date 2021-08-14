@@ -62,6 +62,8 @@
     display: grid;
     column-gap: 10%;
     padding: 30px;
+    height: 100vh;
+    align-content: space-between;
 }
 
 .fullview main {
@@ -82,7 +84,7 @@
 .boxshadow{
     box-shadow: 6px 8px 20px #1e1e1e12;
     border-radius: 1em;
-    padding: 16px;
+    padding: 20px;
     height: max-content;
 }
 
@@ -134,4 +136,8 @@
 main > .box {
     display: grid;
     grid-auto-flow: column;
+}
+
+form .field:nth-child(1) {
+    margin-top: 0;
 }

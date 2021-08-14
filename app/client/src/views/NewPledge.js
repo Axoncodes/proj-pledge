@@ -61,12 +61,12 @@ export default function NewPledge() {
                 <section className="box">
 
                     <form className="boxshadow" onSubmit={handleSubmit} >
-                        <Field tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" ty pe="number" />
-                        <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="email" />
-                        <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="email" />
-                        <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="email" />
-                        <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="email" />
-                        <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="email" />
+                      <Field tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" ty pe="number" />
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="email" />
+                      <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="email" />
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="email" />
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="email" />
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="email" />
                     </form>
                     
                     <section className="boxshadow">

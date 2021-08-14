@@ -31,9 +31,51 @@ export default function Field({
   prefix,
   info,
   tooltip,
+  options,
 }) {
 
   const name_name = title.toLowerCase().replace(" ", "_");
+
+  function input() {
+    return <input
+      className="input"
+      value={value.name_name}
+      placeholder={title}
+      type={type}
+      onChange={handleInput}
+      name={name?name:name_name}
+    />
+  }
+
+  function textarea() {
+    return <textarea 
+      className="input" 
+      rows="4" 
+      cols="50"
+      value={value.name_name}
+      placeholder={title}
+      onChange={handleInput}
+      name={name?name:name_name}  
+    ></textarea>
+  }
+
+  function select() {
+    return <select 
+      onChange={handleInput}
+      className="input" 
+      name={name?name:name_name}>
+        {options.map((key, data)=>(
+          <option key={data} value={key.toLowerCase().replace(" ", "_")}>{key}</option>
+        ))}
+        
+    </select>
+  }
+
+  function display(state) {
+    if(state=="textarea") return textarea()
+    else if(state=="select") return select()
+    else return input()
+  }
   
   return (
     <div className={`field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
@@ -54,13 +96,10 @@ export default function Field({
           </div>
           <div className="inputcard">
             <p className="inputPrefix">{prefix}</p>
-            <input
-              value={value.name_name}
-              placeholder={title}
-              type={type}
-              onChange={handleInput}
-              name={name?name:name_name}
-            />
+              {/* {textbox?textarea():input()}
+              {textbox?textarea():input()} */}
+              {display(type)}
+            
           </div>
         </div>
       </label>
@@ -83,4 +122,5 @@ Field.propTypes = {
   prefix: PropTypes.string,
   info: PropTypes.string,
   tooltip: PropTypes.string,
+  options: PropTypes.array,
 };

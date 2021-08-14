@@ -7,8 +7,9 @@
     justify-content: space-between;
 }
 #list hr {
-    border: 1px solid #F3F3F3;
+    border: .1px solid #F3F3F3;
     background-color: #F3F3F3;
+    margin: 14px 0;
 }
 #list .head p {
     color: #202046;
@@ -25,7 +26,11 @@
 #list .body .item p {
     margin: 0;
 }
-
+#list .body {
+    display: grid;
+    row-gap: 13px;
+    padding: 12px 0;
+}
 #list .body .item {
     display: grid;
     grid-template-columns: max-content auto;

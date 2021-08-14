@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Header from '../components/Header/Header';
 import Breadcrumb from '../components/breadcrumb/Breadcrumb';
 import Field from '../components/form/Field';
+import ProfilePic from '../components/profilepic/ProfilePic';
+import Box from '../components/box/Box';
+
+
 
 export default function EditProfile() {
 
@@ -50,12 +55,35 @@ export default function EditProfile() {
             <main>
                 <Header />
                 <Breadcrumb current="Additional Information" backLink="/" />
-                <form onSubmit={handleSubmit} >
-                    <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Address 1" type="text" />
-                    <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Address 2" type="text" />
-                    <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="City" type="text" />
-                    <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="ss #" type="text" />
-                    <input className="submit" type="submit" value="Update" />
+                
+                <section className="boxes" style={{gridTemplateColumns: "unset", gridAutoFlow: "column" }}>
+                  
+                  <section style={{padding: "20px 15px"}} className="quickBox boxshadow short">
+                    <Link to="/identity-verification">
+                      <section className="inner">
+                        <object
+                          aria-label="img"
+                          data={require(`../assets/images/pocket.svg`)}
+                        />
+                        <div style={{display: "grid", rowGap: "7px" }}>
+                          <p className="title" style={{margin: 0, fontSize: "16px", color: "#202046" }}>Identity Verification</p>
+                          <p className="text" style={{margin: 0, fontSize: "14px", color: "#9CA2AA" }}>Additional Borrower Information to be included in your contract</p>
+                        </div>
+                      </section>
+                    </Link>
+                  </section>
+
+                </section>
+                <form className="boxshadow" onSubmit={handleSubmit} >
+                  <div className="card" style={{gridTemplateColumns: "min-content auto"}}>
+                    <ProfilePic />
+                    <div>
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="First Name" type="text" />
+                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Last Name" type="text" />
+                    </div>
+                  </div>
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Biography" type="textarea" />
+                  <input className="submit" type="submit" value="Update" />
                 </form>
             </main>
         </section>

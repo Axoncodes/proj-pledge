@@ -1,21 +1,21 @@
 .quickBox .inner {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 10px;
+    column-gap: 19px;
     place-items: center;
     width: fit-content;
 }
 
 .quickBox.padding {
-    padding: 30px;
+    padding: 39px 36px;
 }
 
 .quickBox p {
     margin: 0;
     font-size: 14px;
     color: #202046;
-    
 }
+
 .quickBox a {
     text-decoration: none;
 }

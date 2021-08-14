@@ -20,9 +20,6 @@ const authorised = async () => {
   const response = await fetch(req)
   const json = await response.json();
   const auth = json.data.detail=="Verified"?true:false
-  console.log(auth);
-  // return auth;
-
   return new Promise((resolve,reject) => {
     setTimeout(() => {
       resolve(auth);

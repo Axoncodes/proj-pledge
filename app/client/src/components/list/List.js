@@ -13,6 +13,7 @@ export default function List({style, title, altText, altLink}) {
             <hr/>
             <section className="body">
                 <Item icon="cart.svg" label1="Account No." data1="031415" label2="Balance" data2="$2356.21" />
+                <Item icon="cart.svg" label1="Account No." data1="031415" label2="Balance" data2="$2356.21" />
             </section>
         </section>
     )

@@ -13,7 +13,7 @@ export default function Profile() {
     const readMoreHandler = () => { setReadMore(!readMore) }
 
     return (
-        <section id="profile" className="boxshadow">
+        <section id="profile" className="boxshadow" style={{paddingBottom: "28px"}}>
             <section className="info">
                 <img src={person} />
                 <div className="text">
