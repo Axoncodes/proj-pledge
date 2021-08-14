@@ -50,6 +50,11 @@ export default function NewPledge() {
     }
 
 
+    const css_handle_box = {
+      width: "20px"
+    }
+
+
 
 	return(
 		<section className="fullview" id="Home">
@@ -58,24 +63,24 @@ export default function NewPledge() {
 				<Header />
 				<Breadcrumb backLink="/" current="New Pledge Proposal " />
 
-                <section className="box">
+        <section className="boxFlex goFullOnMobile">
 
-                    <form className="boxshadow" onSubmit={handleSubmit} >
-                      <Field tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" ty pe="number" />
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="email" />
-                      <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="email" />
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="email" />
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="email" />
-                      <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="email" />
-                    </form>
-                    
-                    <section className="boxshadow">
-                        <Friends />
-                        <input className="submit" type="submit" value="Update my profile" />
-                    </section>
+          <form className="boxshadow" onSubmit={handleSubmit} style={{width: "54%"}}>
+            <Field tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" type="number" />
+            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="number" />
+            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="string" />
+            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="number" />
+            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="string" />
+            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="textarea" />
+          </form>
 
-                </section>
-            </main>
+          <section style={{width: "34%"}} className="boxshadow noshadow">
+            <Friends />
+            <input className="submit" type="submit" value="Send" />
+          </section>
+
+        </section>
+      </main>
 		</section>
 	)
 

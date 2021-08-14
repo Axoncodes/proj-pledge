@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import NormalItem from "./NormalItem";
 
 import SearchItem from "./SearchItem";
 
@@ -64,8 +62,8 @@ export default function Searchbar({mode}) {
                             <SearchItem searchTerm={searchTerm} searchItem={searchCat} searchTitle="Cats" />
                         </>
                     ):(<>
-                        <NormalItem active={true} searchTerm={searchTerm} searchItem={searchTitle} searchTitle="Results" />
-                        <NormalItem active={false} searchTerm={searchTerm} searchItem={searchTitle} searchTitle="Results" />
+                        {/* <NormalItem active={true} searchTerm={searchTerm} searchItem={searchTitle} searchTitle="Results" />
+                        <NormalItem active={false} searchTerm={searchTerm} searchItem={searchTitle} searchTitle="Results" /> */}
                         </>)
                     }
                 </div>

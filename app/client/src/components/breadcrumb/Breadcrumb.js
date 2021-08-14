@@ -25,9 +25,11 @@ export default function Breadcrumb({
   altLink,
   altTitle,
   displayLogo,
+  mode,
 }) {
   return (
     <section id="breadcrumb">
+
       {exit ? (
         <svg
           id="exit"
@@ -44,43 +46,96 @@ export default function Breadcrumb({
       ) : (
         ''
       )}
+
       <div className="inner_cover">
-        <p className="current">
-         {backLink ? (
-            <Link to={backLink}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                enableBackground="new 0 0 24 24"
-                height="24px"
-                viewBox="0 0 24 24"
-                width="24px"
-                fill="#000000"
-              >
-                <rect fill="none" height="24" width="24" />
-                <path d="M9,19l1.41-1.41L5.83,13H22V11H5.83l4.59-4.59L9,5l-7,7L9,19z" />
-              </svg>
-            </Link>
-          ) : (
-            ''
-          )}
-          {current}</p>
-        <div className="block">
-          {displayLogo ? (
-            <Link to="/">
-              <img alt="" className="logo" src={logo} />
-            </Link>
-          ) : (
-            ''
-          )}
-          {altLink ? (
-            <Link className="altlink" to={altLink}>
-              {altTitle}
-            </Link>
-          ) : (
-            ''
-          )}
-        </div>
+        {mode?(
+          <div className="row">
+            <p className="current">
+              {backLink ? (
+                <Link to={backLink}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    enableBackground="new 0 0 24 24"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    fill="#000000"
+                  >
+                    <rect fill="none" height="24" width="24" />
+                    <path d="M9,19l1.41-1.41L5.83,13H22V11H5.83l4.59-4.59L9,5l-7,7L9,19z" />
+                  </svg>
+                </Link>
+              ) : (
+                ''
+              )}
+              {current}
+            </p>
+            {displayLogo ? (
+              <Link to="/">
+                <img alt="" className="logo" src={logo} />
+              </Link>
+            ) : (
+              ''
+            )}
+            </div>
+
+
+        ):(
+
+          <p className="current">
+            {backLink ? (
+              <Link to={backLink}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  enableBackground="new 0 0 24 24"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  fill="#000000"
+                >
+                  <rect fill="none" height="24" width="24" />
+                  <path d="M9,19l1.41-1.41L5.83,13H22V11H5.83l4.59-4.59L9,5l-7,7L9,19z" />
+                </svg>
+              </Link>
+            ) : (
+              ''
+            )}
+            {current}
+          </p>
+
+        )}
+
+        {mode?(
+          <>
+            {altLink ? (
+              <Link className="altlink mode" to={altLink}>
+                {altTitle}
+              </Link>
+            ) : (
+              ''
+            )}
+          </>
+        ):(
+          <div className="block">
+            {displayLogo ? (
+              <Link to="/">
+                <img alt="" className="logo" src={logo} />
+              </Link>
+            ) : (
+              ''
+            )}
+            {altLink ? (
+              <Link className="altlink" to={altLink}>
+                {altTitle}
+              </Link>
+            ) : (
+              ''
+            )}
+          </div>
+        )}
+        
       </div>
+
     </section>
   );
 }

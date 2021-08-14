@@ -82,10 +82,12 @@
     display: grid;
     grid-column: 2;
     text-transform: inherit;
+    margin: 0;
 }
 .field label.terms .block {
     display: grid;
     grid-auto-flow: column;
+    width: fit-content;
 }
 .field .terms .input {
     margin: 3px 10px;

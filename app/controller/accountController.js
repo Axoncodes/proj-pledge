@@ -151,7 +151,10 @@ const register = async (firstName, lastName, email, password1, password2) => {
   
   const response = await fetch(req)
   const json = await response.json();
-  return json;
+  return {
+    json: json,
+    status: json.status
+  };
 
 }
 

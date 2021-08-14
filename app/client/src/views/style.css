@@ -45,6 +45,7 @@
     }
     #formStyle .card .field {
         margin-bottom: 0;
+        
     }
     #formStyle .card {
         grid-template-columns: unset;
@@ -87,8 +88,18 @@
     padding: 20px;
     height: max-content;
 }
+.noshadow {
+    box-shadow: none;
+}
 
-
+@media (max-width: 1000px) {
+    .goFullOnMobile {
+        row-gap: 20px;
+    }
+    .goFullOnMobile > * {
+        width: 100%!important;
+    }
+}
 
 /* facebook/google */
 #alaternative > button > div {
@@ -138,6 +149,9 @@ main > .box {
     grid-auto-flow: column;
 }
 
-form .field:nth-child(1) {
-    margin-top: 0;
+main > .boxFlex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
 }

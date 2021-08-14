@@ -1,0 +1,46 @@
+/* FriendItem */
+.FriendItem {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    max-height: unset;
+    padding: 13px;
+    align-items: center;
+}
+.FriendItem .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+}
+.FriendItem .info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.FriendItem .info .text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    row-gap: 4px;
+}
+.FriendItem .info .text .name {
+    color: #202046;
+    font-size: 16px;
+}
+.FriendItem .info .text p {
+    margin: 0;
+}
+.FriendItem .info .text .email {
+    color: #9CA2AA;
+    font-size: 13px;
+}
+#FriendItemList {
+    background-color: #F7F7FC;
+    border-radius: 1em;
+}
