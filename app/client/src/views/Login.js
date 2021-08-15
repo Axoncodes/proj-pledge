@@ -25,6 +25,7 @@ export default function Login ({backto}) {
     password: ""
   });
   const [formErr, setFormErr] = useState({});
+  const [box, setBox] = useState(true)
 
 
   const handleInput = event => {
@@ -34,6 +35,9 @@ export default function Login ({backto}) {
       [name]: value
     })
   }
+
+  const boxStatus = () => setBox(!box)
+  const onExit = () => setBox(false)
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -75,7 +79,7 @@ export default function Login ({backto}) {
 
   function form() {
     return(
-      <section id="Login" className="boxModel">
+      <section id="Login" className={`boxModel ${box?'show':''}`}>
         <section className="inner">
 
           <Breadcrumb
@@ -86,6 +90,7 @@ export default function Login ({backto}) {
             altTitle="Sign Up"
             displayLogo="true"
             mode={true}
+            onExit={onExit}
           />
 
           <section id="formStyle">
@@ -107,15 +112,15 @@ export default function Login ({backto}) {
             />
 
 
-            <FacebookLogin
+            {/* <FacebookLogin
               textButton="Sign in with facebook"
               appId= "<FACEBOOK APP ID>"
               fields="name,email,picture"
               callback={fbResponse}
               render={renderProps => (
-                <button onClick="{renderProps.onClick}" type="button" style={{backgroundColor: 'rgb(255, 255, 255)', display: 'inline-flex', alignItems: 'center', color: 'rgba(0, 0, 0, 0.54)', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px', padding: '0px', borderRadius: '2px', border: '1px solid transparent', fontSize: '14px', fontWeight: 500, fontFamily: 'Roboto, sans-serif'}}><div style={{marginRight: '10px', background: 'rgb(255, 255, 255)', padding: '10px', borderRadius: '2px'}}><svg xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px"><g id="surface38459121"><path d="M 17.523438 9 L 14 9 L 14 7 C 14 5.96875 14.085938 5.316406 15.5625 5.316406 L 17.429688 5.316406 L 17.429688 2.136719 C 16.523438 2.042969 15.609375 1.996094 14.691406 2 C 11.980469 2 10 3.65625 10 6.699219 L 10 9 L 7 9 L 7 13 L 10 13 L 10 22 L 14 22 L 14 12.996094 L 17.066406 12.996094 Z M 17.523438 9 " style={{stroke: 'none', fillRule: 'nonzero', fill: 'rgb(24, 119, 242)', fillOpacity: 1}} /></g></svg></div><span style={{padding: '10px 10px 10px 0px', fontWeight: 500}}>Sign in with facebook</span></button>
+                <button onClick={renderProps.onClick} type="button" style={{backgroundColor: 'rgb(255, 255, 255)', display: 'inline-flex', alignItems: 'center', color: 'rgba(0, 0, 0, 0.54)', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px', padding: '0px', borderRadius: '2px', border: '1px solid transparent', fontSize: '14px', fontWeight: 500, fontFamily: 'Roboto, sans-serif'}}><div style={{marginRight: '10px', background: 'rgb(255, 255, 255)', padding: '10px', borderRadius: '2px'}}><svg xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px"><g id="surface38459121"><path d="M 17.523438 9 L 14 9 L 14 7 C 14 5.96875 14.085938 5.316406 15.5625 5.316406 L 17.429688 5.316406 L 17.429688 2.136719 C 16.523438 2.042969 15.609375 1.996094 14.691406 2 C 11.980469 2 10 3.65625 10 6.699219 L 10 9 L 7 9 L 7 13 L 10 13 L 10 22 L 14 22 L 14 12.996094 L 17.066406 12.996094 Z M 17.523438 9 " style={{stroke: 'none', fillRule: 'nonzero', fill: 'rgb(24, 119, 242)', fillOpacity: 1}} /></g></svg></div><span style={{padding: '10px 10px 10px 0px', fontWeight: 500}}>Sign in with facebook</span></button>
               )}
-            />
+            /> */}
           </section>
           {/* <Alaternative action="login" /> */}
         </section>

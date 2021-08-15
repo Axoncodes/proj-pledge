@@ -29,7 +29,7 @@ export default function Breadcrumb({
   mode,
   exitReq,
   children,
-  onExit
+  onExit,
 }) {
   return (
     <section id="breadcrumb">

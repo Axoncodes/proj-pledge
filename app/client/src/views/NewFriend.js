@@ -6,18 +6,15 @@ import ProfilePic from "../components/profilepic/ProfilePic";
 
 export default function NewFriend() {
 
-    const [box, setBox] = useState(false)
     const [formErr, setFormErr] = useState({});
     const [inputForm, setInputForm] = useState({
         email_address: "",
         password: ""
     });
-
-    const boxStatus = () => {
-        // e.preventDefault();
-        setBox(!box);
-        console.log(box);
-    }
+    
+    const [box, setBox] = useState(setBox)
+    const boxStatus = () => setBox(!box)
+    const onExit = () => setBox(false)
 
 
     const handleInput = event => {
@@ -28,9 +25,6 @@ export default function NewFriend() {
         })
     }
 
-    const onExit = event => {
-        setBox(false)
-    }
     
     const handleSubmit = async event => {
         event.preventDefault()

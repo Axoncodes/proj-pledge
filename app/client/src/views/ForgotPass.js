@@ -45,6 +45,10 @@ export default function ForgotPass() {
 
   }
 
+  
+  const [box, setBox] = useState(true)
+  const boxStatus = () => setBox(!box)
+  const onExit = () => setBox(false)
 
 
   function form() {
@@ -83,7 +87,7 @@ export default function ForgotPass() {
 
 
   return (
-    <section id="Forgot" className="boxModel">
+    <section id="Forgot" className={`boxModel ${box?'show':''}`}>
       <section className="inner">
         <Breadcrumb
           exit="true"
@@ -92,6 +96,7 @@ export default function ForgotPass() {
           backLink="/signin"
 					altLink="/signup"
           altTitle="Sign Up"
+          onExit={onExit}
         />
         {state?sent():form()}
       </section>

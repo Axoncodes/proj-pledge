@@ -33,6 +33,10 @@ export default function Register() {
     })
   }
 
+  const [box, setBox] = useState(true)
+  const boxStatus = () => setBox(!box)
+  const onExit = () => setBox(false)
+
   const handleSubmit = async event => {
     console.log(event.target);
     event.preventDefault()
@@ -96,7 +100,7 @@ export default function Register() {
   }
 
   return (
-    <section id="register" className="boxModel">
+    <section id="register" className={`boxModel ${box?'show':''}`}>
       <section className="inner">
         <Breadcrumb
           exit="true"
@@ -106,6 +110,7 @@ export default function Register() {
           altTitle="Sign In"
           displayLogo="true"
           mode={true}
+          onExit={onExit}
         />
         {state?next():form()}
         </section>

@@ -28,6 +28,10 @@ export default function NewPass() {
     })
   }
 
+  const [box, setBox] = useState(setBox)
+  const boxStatus = () => setBox(!box)
+  const onExit = () => setBox(false)
+
   const handleSubmit = async event => {
     console.log(event.target);
     event.preventDefault()
@@ -80,12 +84,13 @@ export default function NewPass() {
   }
 
   return (
-    <section id="NewPass" className="boxModel">
+    <section id="NewPass" className={`boxModel ${box?'show':''}`}>
       <section className="inner">
         <Breadcrumb
           exit="true"
           exitMode="outer"
           current="Fill in your new password"
+          onExit={onExit}
         />
         {state?sent():form()}
       </section>
