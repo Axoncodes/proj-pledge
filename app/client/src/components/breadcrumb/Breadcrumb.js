@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 // css
@@ -26,6 +27,9 @@ export default function Breadcrumb({
   altTitle,
   displayLogo,
   mode,
+  exitReq,
+  children,
+  onExit
 }) {
   return (
     <section id="breadcrumb">
@@ -33,12 +37,13 @@ export default function Breadcrumb({
       {exit ? (
         <svg
           id="exit"
-          className={exitMode}
+          className={`${exitMode} ${exitReq?'exitReq':''}`}
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 0 24 24"
           width="24px"
           fill="#000000"
+          onClick={onExit}
         >
           <path d="M0 0h24v24H0V0z" fill="none" />
           <path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z" />
@@ -79,7 +84,6 @@ export default function Breadcrumb({
             )}
             </div>
 
-
         ):(
 
           <p className="current">
@@ -111,9 +115,9 @@ export default function Breadcrumb({
               <Link className="altlink mode" to={altLink}>
                 {altTitle}
               </Link>
-            ) : (
-              ''
-            )}
+            ) : 
+              children
+            }
           </>
         ):(
           <div className="block">
@@ -128,9 +132,9 @@ export default function Breadcrumb({
               <Link className="altlink" to={altLink}>
                 {altTitle}
               </Link>
-            ) : (
-              ''
-            )}
+            ) : 
+              children
+            }
           </div>
         )}
         
@@ -140,12 +144,13 @@ export default function Breadcrumb({
   );
 }
 
-Breadcrumb.propTypes = {
-  exit: PropTypes.string,
-  exitMode: PropTypes.string,
-  backLink: PropTypes.string,
-  current: PropTypes.string,
-  altLink: PropTypes.string,
-  altTitle: PropTypes.string,
-  displayLogo: PropTypes.string,
-};
+// Breadcrumb.propTypes = {
+//   exit: PropTypes.string,
+//   exitMode: PropTypes.string,
+//   backLink: PropTypes.string,
+//   current: PropTypes.string,
+//   altLink: PropTypes.string,
+//   altTitle: PropTypes.string,
+//   displayLogo: PropTypes.string,
+//   mode: PropTypes.bool,
+// };

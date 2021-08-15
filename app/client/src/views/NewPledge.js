@@ -65,13 +65,13 @@ export default function NewPledge() {
 
         <section className="boxFlex goFullOnMobile">
 
-          <form className="boxshadow" onSubmit={handleSubmit} style={{width: "54%"}}>
-            <Field tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" type="number" />
-            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="number" />
-            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="string" />
-            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="number" />
-            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="string" />
-            <Field tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="textarea" />
+          <form className="boxshadow" onSubmit={handleSubmit} style={{width: "54%", display: "grid", rowGap: "15px",}}>
+            <Field nomargin={true} tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="string" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="string" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="textarea" />
           </form>
 
           <section style={{width: "34%"}} className="boxshadow noshadow">

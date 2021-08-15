@@ -1,7 +1,9 @@
 #profilePicEdite .inner {
-    display: block;
+    display: flex;
+    align-items: center;
     height: min-content;
     position: relative;
+    column-gap: 15px;
 }
 #profilePicEdite .userpic {
     width: 80px;

@@ -37,14 +37,14 @@ export default function App() {
       <Router>
         <Switch>
 
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/signin" component={Login} />
           <Route path="/signup" component={Register} />
           <Route path="/password-recovery" component={ForgotPass} />
           <Route path="/verify-password/:uid/:token" component={PasswordReset} />
-          <PrivateRoute path="/edit-profile" component={EditProfile} />
-          <PrivateRoute path="/new-pledge" component={NewPledge} />
-          <PrivateRoute path="/identity-verification" component={IdentitVer} />
+          <Route path="/edit-profile" component={EditProfile} />
+          <Route path="/new-pledge" component={NewPledge} />
+          <Route path="/identity-verification" component={IdentitVer} />
 
         </Switch>
       </Router>

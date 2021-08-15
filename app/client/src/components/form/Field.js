@@ -19,6 +19,7 @@ import './style.css';
 export default function Field({ 
   icon, 
   title, 
+  hideTitle,
   type, 
   link,
   handleInput,
@@ -33,13 +34,14 @@ export default function Field({
   tooltip,
   options,
   nomargin,
+  mode,
 }) {
 
   const name_name = title.toLowerCase().replace(" ", "_");
 
   function input() {
     return <input
-      className="input"
+      className={`input`}
       value={value.name_name}
       placeholder={title}
       type={type}
@@ -50,7 +52,7 @@ export default function Field({
 
   function textarea() {
     return <textarea 
-      className="input" 
+      className={`input`}
       rows="4" 
       cols="50"
       value={value.name_name}
@@ -63,7 +65,7 @@ export default function Field({
   function select() {
     return <select 
       onChange={handleInput}
-      className="input" 
+      className={`input`} 
       name={name?name:name_name}>
         {options.map((key, data)=>(
           <option key={data} value={key.toLowerCase().replace(" ", "_")}>{key}</option>
@@ -79,19 +81,20 @@ export default function Field({
   }
   
   return (
-    <div className={` ${nomargin?'nomargin':''} field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
+    <div className={` ${mode?'bkg':''} ${nomargin?'nomargin':''} field ${icon?'icon':''} ${customClass?customClass:''} ${valid?"valid":"invalid"} ${name_name}`}>
       <label className={link ? 'terms' : type == 'submit' ? 'submit' : ''}>
         {icon?
-        <div className="image">
-          <object
-            aria-label="img"
-            data={require(`../../assets/images/${!valid?'red-':''}${icon}`)}
-          />
-        </div>
-        :<div></div>}
+          <div className="image">
+            <object
+              aria-label="img"
+              data={require(`../../assets/images/${!valid?'red-':''}${icon}`)}
+            />
+          </div>
+          :<div></div>
+        }
         <div className="block">
           <div className="inputinfo">
-            <p className="title">{title}</p>
+            <p className="title">{hideTitle?'':title}</p>
             <p className="message">{message}</p>
             {tooltip?<Tooltip content={tooltip} />:''}
           </div>
@@ -108,6 +111,7 @@ export default function Field({
 Field.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
+  hideTitle: PropTypes.bool,
   type: PropTypes.string,
   link: PropTypes.string,
   handleInput: PropTypes.func,
@@ -122,4 +126,5 @@ Field.propTypes = {
   tooltip: PropTypes.string,
   options: PropTypes.array,
   nomargin: PropTypes.bool,
+  mode: PropTypes.bool,
 };

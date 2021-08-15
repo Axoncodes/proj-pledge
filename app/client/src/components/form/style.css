@@ -1,6 +1,6 @@
 .field .block {
     display: flex;
-    flex-direction: column;
+    flex-direction: column!important;
     flex-wrap: nowrap;
     width: 100%;
     position: relative;
@@ -139,4 +139,18 @@
         width: 44px;
         height: 44px;
     }
+}
+
+
+
+
+/* bkg */
+.field.bkg {
+    border-radius: .5em;
+    overflow: hidden;
+    margin: 6px 0;
+}
+.field.bkg .input {
+    background-color: #F3F3F3;
+    padding: 13px;
 }
