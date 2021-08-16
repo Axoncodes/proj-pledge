@@ -12,7 +12,8 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
 
 	const authenticate = async () => {
     // setAuthCount(authCount+1)
-    setAuth(await account.authorised());
+    const res = await account.authorised();
+    setAuth(res.auth);
 	}
   
 	useEffect(()=>{
@@ -44,6 +45,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
 
 
   const load = () =>{
+    
     // const auth = await account.authorised();
 		if(auth === null){
 			return "loading..."

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Header from '../components/Header/Header';
@@ -18,10 +18,10 @@ export default function Home() {
 				<Profile />
 				<section className="boxes">
 					<Box link="/new-pledge" style="padding boxshadow short" text="New Pledge Proposal" icon="newproposal.svg"/>
-					<Box style="padding boxshadow short" text="Statements and Documents" icon="statement.svg"/>
-					<Box style="padding boxshadow wide" text="Make A Payment" icon="makeapayment.svg"/>
+					<Box link="/" style="padding boxshadow short" text="Statements and Documents" icon="statement.svg"/>
+					<Box link="/" style="padding boxshadow wide" text="Make A Payment" icon="makeapayment.svg"/>
 				</section>
-				<List style="boxshadow" title="Pledges" altText="All Pledges" altLink="/pledges" />
+				<List link="pledges" style="boxshadow" title="Pledges" altText="All Pledges" altLink="/pledges" options={[{'id':'1', 'account':'04123','balance':'4123'}, {'id':'2', 'account':'4127', 'balance':'4126123'}, {'id':'3', 'account':'0543','balance':'93340'}]} />
 			</main>
 		</section>
 	)

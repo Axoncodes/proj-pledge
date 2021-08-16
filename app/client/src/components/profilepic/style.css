@@ -25,3 +25,9 @@
     height: auto;
     fill: #fff;
 }
+#profilePicEdite.noborder .userpic {
+    background-color: unset;
+}
+#profilePicEdite.noborder .edit {
+    display: none;
+}

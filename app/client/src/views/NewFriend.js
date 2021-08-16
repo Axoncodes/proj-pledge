@@ -27,30 +27,7 @@ export default function NewFriend() {
 
     
     const handleSubmit = async event => {
-        event.preventDefault()
-        // const response = await account.login(
-        //   inputForm["email_address"],
-        //   inputForm["password"],
-        // )
-    
-        // console.log("response", response);
-        
-        // if(response.status != 200) {
-        //   console.log("fail", response.message)
-        //   var result={};
-        //   for(var i=0; i<Object.keys(response.json).length; i++)
-        //   result[Object.keys(response.json)[i]] = Object.values(response.json)[i][0]
-        //   setFormErr(result);
-        // } else {
-        //   console.log(response.message);
-        //   if(location.state){
-        //     console.log(location.state.backto);
-        //     history.push(location.state.backto)
-        //   }else{
-        //     history.push("/")
-        //   }
-        // }
-        
+        event.preventDefault()        
     }
 
     return (
@@ -60,7 +37,7 @@ export default function NewFriend() {
                 <div className="inner">
                 <Breadcrumb onExit={onExit} current="Add Friends & Family" altTitle="Add" exit={true} exitReq={true} exitMode="outer" />
                 <form onSubmit={handleSubmit} style={{marginTop: "20px"}}>
-                    <ProfilePic text="Upload profile image" />
+                    <ProfilePic text="Upload profile image" style="noborder" />
                     <div className="card">
                         <Field mode={true} nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} hideTitle={true} title="First Name" type="string" />
                         <Field mode={true} nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} hideTitle={true} title="Last Name" type="string" />
@@ -68,7 +45,6 @@ export default function NewFriend() {
                     <Field mode={true} nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} hideTitle={true} title="Phone Number" type="string" />
                     <Field mode={true} nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} hideTitle={true} title="Email Address" type="string" />
                     <Field mode={true} nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Last Name" type="select" options={['Father', 'Mother', 'Sibling', 'Grandparent', 'Friend']} />
-
                 </form>
                 </div>
             </section>

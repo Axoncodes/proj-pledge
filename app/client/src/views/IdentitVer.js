@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Header from '../components/Header/Header';
 import Breadcrumb from '../components/breadcrumb/Breadcrumb';
 import Field from '../components/form/Field';
-import ProfilePic from '../components/profilepic/ProfilePic';
-import Box from '../components/box/Box';
+import { profileInfo } from '../../../controller/profileController';
 
 
 
@@ -14,17 +12,33 @@ export default function IdentitVer() {
 
     const [formErr, setFormErr] = useState({});
     const [inputForm, setInputForm] = useState({
+        date_of_birth: "",
+        country: "",
+        city: "",
+        state: "",
+        address1: "",
+        address2: "",
         email_address: "",
-        password: ""
+        phone_number: "",
+        zip_code: "",
+        id_card: "",
     });
 
     const handleSubmit = async event => {
 
         console.log(event.target);
         event.preventDefault()
-        const response = await account.login(
-          inputForm["email_address"],
-          inputForm["password"],
+        const response = await profileInfo.editAdditionalInformation(
+          inputForm["date_of_birth"],
+          inputForm["country"],
+          inputForm["state"],
+          inputForm["city"],
+          inputForm["address_1"],
+          inputForm["address_2"],
+          inputForm["phone_number"],
+          inputForm["id_card"],
+          inputForm["zip_code"],
+          inputForm["verified"],
         )
         
         if(response.status != 200) {
@@ -40,14 +54,32 @@ export default function IdentitVer() {
     }
     
     const handleInput = event => {
-
-        const {name, value} = event.target;
-        setInputForm({
-          ...inputForm,
-          [name]: value
-        })
-
+      const {name, value} = event.target;
+      setInputForm({
+        ...inputForm,
+        [name]: value
+      })
     }
+
+    const getUserInfo = async () => {
+      const response = await profileInfo.viewAdditionalInformation();
+      setInputForm({
+        date_of_birth: response['data']['birth_date'],
+        country: response['data']['country'],
+        state: response['data']['state'],
+        city: response['data']['city'],
+        address_1: response['data']['address_1'],
+        address_2: response['data']['address_2'],
+        phone_number: response['data']['phone_number'],
+        id_card: response['data']['id_card'],
+        zip_code: response['data']['zip_code'],
+        verified: response['data']['verified'],
+      })
+      console.log(inputForm);
+    }
+    useEffect(() => {
+      getUserInfo()
+    }, [])
 
     return (
         <section className="fullview" id="editProfile">
@@ -57,16 +89,16 @@ export default function IdentitVer() {
                 <Breadcrumb current="Identity Verification" backLink="/edit-profile" />
   
                 <form className="boxshadow" onSubmit={handleSubmit} >
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Date of birth" type="date" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Country" type="select" options={["item1", "item2", "item3"]} />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="City" type="text" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="State" type="select" options={["item1", "item2", "item3"]} />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Address Line 1" type="string" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Address Line 2" type="string" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Email Address" type="email" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Phone Number" type="number" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Zip code" type="number" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="ID upload" type="file" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.date_of_birth} title="Date of birth" type="date" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.country} title="Country" type="select" options={["item1", "item2", "item3"]} />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.city} title="City" type="text" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.state} title="State" type="select" options={["item1", "item2", "item3"]} />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.address1} title="Address Line 1" type="string" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.address2} title="Address Line 2" type="string" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.email_address} title="Email Address" type="email" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.phone_number} title="Phone Number" type="number" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.zip_code} title="Zip code" type="number" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.id_card} title="ID Card" type="file" />
                   <input className="submit" type="submit" value="Update" />
                 </form>
                 

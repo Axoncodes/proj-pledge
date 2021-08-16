@@ -5,9 +5,9 @@ import edit_icon from '../../assets/images/edit.svg'
 
 import './style.css'
 
-export default function ProfilePic({text}) {
+export default function ProfilePic({text, style}) {
     return (
-        <section id="profilePicEdite">
+        <section id="profilePicEdite" className={style}>
             <div className="inner">
                 <img className="userpic" src={person} />
                 <div className="edit">

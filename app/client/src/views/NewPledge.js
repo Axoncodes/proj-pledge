@@ -50,11 +50,6 @@ export default function NewPledge() {
     }
 
 
-    const css_handle_box = {
-      width: "20px"
-    }
-
-
 
 	return(
 		<section className="fullview" id="Home">

@@ -66,13 +66,13 @@ export default function Register() {
       <section id="formStyle">
         <form onSubmit={handleSubmit} >
           <div className="card">
-            <Field valid={formErr.first_name?false:true} message={formErr.first_name} required={true} handleInput={handleInput} value={inputForm} icon="user.svg" title="First Name" type="text" />
-            <Field valid={formErr.last_name?false:true} message={formErr.last_name} required={true} handleInput={handleInput} value={inputForm} icon="user.svg" title="Last Name" type="text" />
+            <Field valid={formErr.first_name?false:true} message={formErr.first_name} required={true} onChange={handleInput} value={inputForm.first_name} icon="user.svg" title="First Name" type="text" />
+            <Field valid={formErr.last_name?false:true} message={formErr.last_name} required={true} onChange={handleInput} value={inputForm.last_name} icon="user.svg" title="Last Name" type="text" />
           </div>
-          <Field valid={formErr.email?false:true} message={formErr.email} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Email Address" type="email" />
-          <Field valid={formErr.date?false:true} message={formErr.date} required={true} handleInput={handleInput} value={inputForm} icon="date.svg" title="Birth Date" type="date" />
-          <Field valid={formErr.password1?false:true} message={formErr.password1} required={true} handleInput={handleInput} value={inputForm} icon="pass.svg" title="Password" type="password" />
-          <Field valid={formErr.password2?false:true} message={formErr.password2} required={true} handleInput={handleInput} value={inputForm} icon="pass.svg" title="Password Confirm" type="password" />
+          <Field valid={formErr.email?false:true} message={formErr.email} required={true} onChange={handleInput} value={inputForm.email_address} icon="email.svg" title="Email Address" type="email" />
+          <Field valid={formErr.date?false:true} message={formErr.date} required={true} onChange={handleInput} value={inputForm.email_address} icon="date.svg" title="Birth Date" type="date" />
+          <Field valid={formErr.password1?false:true} message={formErr.password1} required={true} onChange={handleInput} value={inputForm.password} icon="pass.svg" title="Password" type="password" />
+          <Field valid={formErr.password2?false:true} message={formErr.password2} required={true} onChange={handleInput} value={inputForm.password_confirm} icon="pass.svg" title="Password Confirm" type="password" />
 
           <div className="field valid terms">
             <label className='terms'>

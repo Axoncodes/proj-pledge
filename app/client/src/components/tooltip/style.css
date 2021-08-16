@@ -1,6 +1,7 @@
 .tooltip {
     position: relative;
     height: 11px;
+    margin-left: 7px;
 }
 .tooltip .icon {
     fill: #9CA2AA;

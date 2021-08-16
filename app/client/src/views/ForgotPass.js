@@ -54,7 +54,7 @@ export default function ForgotPass() {
   function form() {
     return(
       <form onSubmit={handleSubmit} >
-        <Field valid={formErr.email?false:true} message={formErr.email} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Email Address" type="email" />
+        <Field valid={formErr.email?false:true} message={formErr.email} required={true} handleInput={handleInput} value={inputFor.email_address} icon="email.svg" title="Email Address" type="email" />
         <input className="submit" type="submit" value="Recover" />
       </form>
     )

@@ -25,16 +25,23 @@
 }
 #list .body .item p {
     margin: 0;
+    color: #202046;
 }
 #list .body {
     display: grid;
-    row-gap: 13px;
-    padding: 12px 0;
+    row-gap: 3px;
+}
+#list .body a {
+    text-decoration: none;
 }
 #list .body .item {
     display: grid;
     grid-template-columns: max-content auto;
     column-gap: 15px;
+    transition: all .3s;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: .5em;
 }
 #list .body .item .data {
     display: grid;
@@ -44,3 +51,32 @@
 #list .body .item .data .box:nth-child(2) {
     text-align: right;
 }
+
+#list .body .item:hover {
+    background-color: #00000012;
+}
+
+/* table */
+
+#list .detailedbox.display {
+    display: grid;
+    place-items: center;
+}
+#list .detailedbox table td, #list .detailedbox table th {
+    /* padding: 5px 16px; */
+    text-align: left;
+}
+#list .detailedbox table tr {
+    display: grid;
+    grid-template-columns: 18% 18% 21% 43%;
+}
+#list.table table {
+    display: grid;
+}
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import Breadcrumb from '../components/breadcrumb/Breadcrumb';
 import Field from '../components/form/Field';
 import ProfilePic from '../components/profilepic/ProfilePic';
-import Box from '../components/box/Box';
+import { profileInfo } from '../../../controller/profileController';
 
 
 
@@ -14,40 +14,54 @@ export default function EditProfile() {
 
     const [formErr, setFormErr] = useState({});
     const [inputForm, setInputForm] = useState({
-        email_address: "",
-        password: ""
+      first_name: "",
+      last_name: "",
+      biography: "",
+      photo: "",
     });
 
     const handleSubmit = async event => {
 
-        console.log(event.target);
-        event.preventDefault()
-        const response = await account.login(
-          inputForm["email_address"],
-          inputForm["password"],
-        )
-        
-        if(response.status != 200) {
-          console.log(response.json)
-          var result={};
-          for(var i=0; i<Object.keys(response.json).length; i++)
-          result[Object.keys(response.json)[i]] = Object.values(response.json)[i][0]
-          setFormErr(result);
-        } else {
-          console.log(response.status);
-        }
-        
+      console.log(event.target);
+      event.preventDefault()
+      const response = await profileInfo.editProfile(
+        inputForm["first_name"],
+        inputForm["last_name"],
+        inputForm["profile_photo"],
+        inputForm["biography"],
+      )
+      
+      if(response.status != 200) {
+        console.log(response.json)
+        var result={};
+        for(var i=0; i<Object.keys(response.json).length; i++)
+        result[Object.keys(response.json)[i]] = Object.values(response.json)[i][0]
+        setFormErr(result);
+      } else console.log(response.status);
+      
     }
     
     const handleInput = event => {
-
-        const {name, value} = event.target;
-        setInputForm({
-          ...inputForm,
-          [name]: value
-        })
-
+      const {name, value} = event.target;
+      setInputForm({
+        ...inputForm,
+        [name]: value
+      })
     }
+
+    const getUserInfo = async () => {
+      const response = await profileInfo.viewProfile();
+      setInputForm({
+        first_name: response['data']['first_name'],
+        last_name: response['data']['last_name'],
+        biography: response['data']['biography'],
+        photo: response['data']['profile_photo'],
+      })
+      console.log(inputForm);
+    }
+    useEffect(() => {
+      getUserInfo()
+    }, [])
 
     return (
         <section className="fullview" id="editProfile">
@@ -78,11 +92,11 @@ export default function EditProfile() {
                   <div className="card" style={{gridTemplateColumns: "min-content auto"}}>
                     <ProfilePic />
                     <div style={{display: "grid", rowGap: "10px"}}>
-                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="First Name" type="text" />
-                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Last Name" type="text" />
+                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.first_name} title="First Name" type="text" />
+                      <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.last_name} title="Last Name" type="text" />
                     </div>
                   </div>
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} handleInput={handleInput} value={inputForm} title="Biography" type="textarea" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.biography} title="Biography" type="textarea" />
                   <input className="submit" type="submit" value="Update" />
                 </form>
             </main>

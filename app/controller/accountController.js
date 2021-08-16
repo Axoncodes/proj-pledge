@@ -1,6 +1,7 @@
 import 'regenerator-runtime/runtime'
 import axios from 'axios';
 
+
 const authorised = async () => {
   
   var myHeaders = new Headers();
@@ -20,11 +21,17 @@ const authorised = async () => {
   const response = await fetch(req)
   const json = await response.json();
   const auth = json.data.detail=="Verified"?true:false
-  return new Promise((resolve,reject) => {
-    setTimeout(() => {
-      resolve(auth);
-    }, 1000);
-  });
+  // return auth
+  return {
+    auth: auth,
+    csrf: json.data.csrf,
+  }
+
+  // return new Promise((resolve,reject) => {
+  //   setTimeout(() => {
+  //     resolve(auth);
+  //   }, 1000);
+  // });
 
 }
 
@@ -37,6 +44,8 @@ const login = async (user, pass) => {
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
+  const auth = await account.authorised();
+  myHeaders.append("X-CSRFToken", auth.csrf)
 
   var raw = JSON.stringify({
     "email": user,
@@ -71,6 +80,8 @@ const passwordReset = async (email) => {
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
+  const auth = await account.authorised();
+  myHeaders.append("X-CSRFToken", auth.csrf)
 
   var raw = JSON.stringify({
     "email": email,
@@ -103,6 +114,8 @@ const logout = async () => {
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
+  const auth = await account.authorised();
+  myHeaders.append("X-CSRFToken", auth.csrf)
 
   let req = new Request(
     'https://papp.rastava.com/api/logout/', 
@@ -129,6 +142,8 @@ const register = async (firstName, lastName, email, password1, password2) => {
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
+  const auth = await account.authorised();
+  myHeaders.append("X-CSRFToken", auth.csrf)
 
   var raw = JSON.stringify({
     "first_name": firstName,
@@ -205,6 +220,8 @@ const passwordVerify = async (password, passwordConfirm, uid, token) => {
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
+  const auth = await account.authorised();
+  myHeaders.append("X-CSRFToken", auth.csrf)
 
   var raw = JSON.stringify({
     "new_password1": password,

@@ -8,7 +8,6 @@ import { account } from '../../../controller/accountController';
 export default function NewPass() {
 
   const params = useParams()
-  let history = useHistory();
 
   const [inputForm, setInputForm] = useState({
     password: "",

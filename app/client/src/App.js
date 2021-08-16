@@ -16,6 +16,7 @@ import {PrivateRoute} from './components/routes/privateRoute/PrivateRoute';
 
 // css
 import './style.css';
+import Pledges from './views/Pledges';
 
 /*
   This file:
@@ -45,6 +46,7 @@ export default function App() {
           <PrivateRoute path="/edit-profile" component={EditProfile} />
           <PrivateRoute path="/new-pledge" component={NewPledge} />
           <PrivateRoute path="/identity-verification" component={IdentitVer} />
+          <PrivateRoute path="/pledges/:id" component={Pledges} />
 
         </Switch>
       </Router>

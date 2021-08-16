@@ -22,7 +22,7 @@ export default function Field({
   hideTitle,
   type, 
   link,
-  handleInput,
+  onChange,
   value,
   name,
   required,
@@ -37,15 +37,16 @@ export default function Field({
   mode,
 }) {
 
-  const name_name = title.toLowerCase().replace(" ", "_");
+  const name_name = title.toLowerCase().replaceAll(" ", "_");
 
   function input() {
     return <input
+      autoComplete="off"
       className={`input`}
-      value={value.name_name}
+      value={value}
       placeholder={title}
       type={type}
-      onChange={handleInput}
+      onChange={onChange}
       name={name?name:name_name}
     />
   }
@@ -55,16 +56,16 @@ export default function Field({
       className={`input`}
       rows="4" 
       cols="50"
-      value={value.name_name}
       placeholder={title}
-      onChange={handleInput}
+      onChange={onChange}
       name={name?name:name_name}  
+      value={value}
     ></textarea>
   }
 
   function select() {
     return <select 
-      onChange={handleInput}
+      onChange={onChange}
       className={`input`} 
       name={name?name:name_name}>
         {options.map((key, data)=>(
@@ -108,23 +109,23 @@ export default function Field({
   );
 }
 
-Field.propTypes = {
-  icon: PropTypes.string,
-  title: PropTypes.string,
-  hideTitle: PropTypes.bool,
-  type: PropTypes.string,
-  link: PropTypes.string,
-  handleInput: PropTypes.func,
-  value: PropTypes.object,
-  name: PropTypes.string,
-  required: PropTypes.bool,
-  valid: PropTypes.bool,
-  message: PropTypes.string,
-  customClass: PropTypes.string,
-  prefix: PropTypes.string,
-  info: PropTypes.string,
-  tooltip: PropTypes.string,
-  options: PropTypes.array,
-  nomargin: PropTypes.bool,
-  mode: PropTypes.bool,
-};
+// Field.propTypes = {
+//   icon: PropTypes.string,
+//   title: PropTypes.string,
+//   hideTitle: PropTypes.bool,
+//   type: PropTypes.string,
+//   link: PropTypes.string,
+//   onChange: PropTypes.func,
+//   value: PropTypes.object,
+//   name: PropTypes.string,
+//   required: PropTypes.bool,
+//   valid: PropTypes.bool,
+//   message: PropTypes.string,
+//   customClass: PropTypes.string,
+//   prefix: PropTypes.string,
+//   info: PropTypes.string,
+//   tooltip: PropTypes.string,
+//   options: PropTypes.array,
+//   nomargin: PropTypes.bool,
+//   mode: PropTypes.bool,
+// };
