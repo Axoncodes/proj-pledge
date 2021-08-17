@@ -12,4 +12,4 @@ ENV PORT=140
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["node", "server"]
