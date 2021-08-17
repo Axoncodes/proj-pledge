@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import SearchItem from "./SearchItem";
+import SearchItem from "./Searchitem";
 
 import './style.css'
 
