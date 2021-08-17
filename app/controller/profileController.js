@@ -78,7 +78,7 @@ const viewAdditionalInformation = async () => {
 }
 
 
-const editAdditionalInformation = async (date_of_birth, country, state, city, address_1, address_2, phone_number, id_card, zip_code, verified) => {
+const editAdditionalInformation = async (date_of_birth, country, state, city, address_1, address_2, phone_number, id_card, zip_code) => {
   
   
   var myHeaders = new Headers();
@@ -95,9 +95,8 @@ const editAdditionalInformation = async (date_of_birth, country, state, city, ad
     'address_1':address_1,
     'address_2':address_2,
     'phone_number':phone_number,
-    'id_card':id_card,
+    // 'id_card':id_card,
     'zip_code':zip_code,
-    'verified':verified,
   });
 
   let req = new Request(
@@ -118,6 +117,68 @@ const editAdditionalInformation = async (date_of_birth, country, state, city, ad
 }
 
 
+const countries = async () => {
+  
+  var myHeaders = new Headers();
+  myHeaders.append("accept", "application/json");
+  myHeaders.append("Content-Type", "application/json");
+
+  let req = new Request(
+    'https://papp.rastava.com/cities_light/api/countries', 
+    {
+      mode: 'cors',
+      credentials: 'include',
+      method: 'GET',
+      headers: myHeaders,
+    }
+  );
+  
+  const response = await fetch(req)
+  const json = await response.json();
+  console.log(json.data[0].name);
+  var names = [];
+  await json.data.forEach((item, index)=>{
+    names.push(item.name)
+  })
+  return {
+    names:names
+  };
+  
+}
+
+
+const states = async () => {
+  
+  var myHeaders = new Headers();
+  myHeaders.append("accept", "application/json");
+  myHeaders.append("Content-Type", "application/json");
+
+  let req = new Request(
+    'https://papp.rastava.com/cities_light/api/regions', 
+    {
+      mode: 'cors',
+      credentials: 'include',
+      method: 'GET',
+      headers: myHeaders,
+    }
+  );
+  
+  const response = await fetch(req)
+  const json = await response.json();
+  console.log(json.data[0].name);
+  var names = [];
+  await json.data.forEach((item, index)=>{
+    names.push(item.name)
+  })
+  return {
+    names:names
+  };
+  
+}
+
+
+
+
 
 
   export const profileInfo = {
@@ -125,4 +186,6 @@ const editAdditionalInformation = async (date_of_birth, country, state, city, ad
     editProfile,
     viewAdditionalInformation,
     editAdditionalInformation,
+    countries,
+    states,
   }

@@ -68,9 +68,9 @@ export default function Field({
       onChange={onChange}
       className={`input`} 
       name={name?name:name_name}>
-        {options.map((key, data)=>(
+        {options?options.map((key, data)=>(
           <option key={data} value={key.toLowerCase().replace(" ", "_")}>{key}</option>
-        ))}
+        )):''}
         
     </select>
   }
