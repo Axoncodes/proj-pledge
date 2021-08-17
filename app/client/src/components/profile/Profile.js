@@ -17,7 +17,6 @@ export default function Profile() {
     const getUserInfo = async () => {
 		const response = await profileInfo.viewProfile();
         setProfile(response['data'])
-		console.log(response['data']);
 	}
     useEffect(() => {
         getUserInfo()
@@ -32,8 +31,8 @@ export default function Profile() {
                 <div className="text">
                     <p className="highlight">
                         <span>{profile['first_name']} {profile['last_name']}</span>
-                        <span className="dot"></span>
-                        <span>{profile['age']}</span>
+                        {/* <span className="dot"></span>
+                        <span>{profile['age']}</span> */}
                     </p>
                     <p>{profile['email']}</p>
                 </div>

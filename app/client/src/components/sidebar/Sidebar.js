@@ -42,7 +42,7 @@ export default function Sidebar() {
 
         <div className="username_holder">
           <p id="username">{profile['first_name']} {profile['last_name']}</p>
-          <p id="user_age">{profile['age']}</p>
+          {/* <p id="user_age">{profile['age']}</p> */}
         </div>
 
         <p id="user_email">{profile['email']}</p>
