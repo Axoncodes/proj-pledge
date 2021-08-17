@@ -58,7 +58,7 @@
     margin: 0;
 }
 .field.extrasize p.inputPrefix, .field.extrasize .input {
-    font-size: 32px;
+    font-size: 32px!important;
 }
 
 .field .input::placeholder {

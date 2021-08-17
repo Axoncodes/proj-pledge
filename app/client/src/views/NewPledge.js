@@ -5,6 +5,7 @@ import Header from '../components/Header/Header';
 import Breadcrumb from '../components/breadcrumb/Breadcrumb';
 import Field from '../components/form/Field';
 import Friends from '../components/friends/Friends';
+import { pledge } from '../../../controller/pledgeController';
 
 export default function NewPledge() {
 
@@ -24,9 +25,13 @@ export default function NewPledge() {
     
     const handleSubmit = async event => {
         event.preventDefault()
-        const response = await account.login(
-          inputForm["email_address"],
-          inputForm["password"],
+        const response = await pledge.createPledge(
+          inputForm["amount"],
+          inputForm["interest_rate"],
+          inputForm["term"],
+          inputForm["monthly_payment"],
+          inputForm["repayment_source"],
+          inputForm["message"],
         )
     
         console.log("response", response);
@@ -61,17 +66,17 @@ export default function NewPledge() {
         <section className="boxFlex goFullOnMobile">
 
           <form className="boxshadow" onSubmit={handleSubmit} style={{width: "54%", display: "grid", rowGap: "15px",}}>
-            <Field nomargin={true} tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Amount" type="number" />
-            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Interest Rate" type="number" />
-            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Term" type="string" />
-            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Monthly Payment" type="number" />
-            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} icon="email.svg" title="Repayment Source" type="string" />
-            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} handleInput={handleInput} value={inputForm} title="Message" type="textarea" />
+            <Field nomargin={true} tooltip="sasho" customClass="extrasize" prefix="$" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.amount} title="Amount" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.interest_rate} title="Interest Rate" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.term} title="Term" type="string" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.monthly_payment} title="Monthly Payment" type="number" />
+            <Field nomargin={true} tooltip="sasho" valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.repayment_source} icon="email.svg" title="Repayment Source" type="string" />
+            <Field nomargin={true} valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} required={true} onChange={handleInput} value={inputForm.message} title="Message" type="textarea" />
           </form>
 
           <section style={{width: "34%"}} className="boxshadow noshadow">
             <Friends />
-            <input className="submit" type="submit" value="Send" />
+            <input onClick={handleSubmit} className="submit" type="submit" value="Send" />
           </section>
 
         </section>
