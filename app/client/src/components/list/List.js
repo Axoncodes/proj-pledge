@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Item from "./Item"
 
 import './style.css'
-export default function List({icon, stylestyle, style, title, altText, options, link, mode}) {
+export default function List({id, icon, stylestyle, style, title, altText, options, link, mode}) {
 
   const [count, setCount] = useState(2)
   const [full, setFull] = useState(true)
@@ -89,7 +89,7 @@ export default function List({icon, stylestyle, style, title, altText, options, 
   }
   
   return (
-    <section style={stylestyle} id="list" className={`${style} ${mode}`}>
+    <section style={stylestyle} id={`list`} className={`${style} ${mode} ${id}`}>
       <section className="inner detailedbox">
         {display()}
       </section>

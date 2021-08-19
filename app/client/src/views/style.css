@@ -115,6 +115,11 @@
         width: 96%;
     }
 }
+@media (max-width: 400px) {
+    #sectionroot .fullview {
+        padding: 15px;
+    }
+}
 #sectionroot .fullview.single section#profile section.boxes {
     display: none;
 }
@@ -138,7 +143,7 @@
 }
 @media (max-width: 500px) {
     .boxshadow {
-        padding: 20px 3%;
+        padding: 15px 3%!important;
     }
 }
 
@@ -225,4 +230,53 @@ main > .boxFlex {
 
 form {
     display: grid;
+}
+
+
+
+/* pledgesStatus */
+
+#pledgesStatus {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 16px;
+    justify-content: space-between;
+}
+#pledgesStatus .boxes {
+    display: grid;
+    width: 24%;
+}
+#pledgesStatus .boxes .quickBox, #pledgesStatus .boxes .quickBox .inner {
+    height: auto;
+    display: grid;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    section#pledgesStatus .boxes {
+        width: 49%;
+    }
+}
+@media (max-width: 400px) {
+    section#pledgesStatus .boxes {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .pledgesTransactions .detailedbox table tr {
+        grid-template-columns: 33% 33% 33%!important;
+    }
+    .pledgesTransactions .detailedbox table td.desc {
+        grid-column: 1/4;
+    }
+    .pledgesTransactions tbody {
+        row-gap: 20px;
+        display: grid;
+    }
+    #list .detailedbox table td, #list .detailedbox table th {
+        font-size: .8rem;
+    }
 }

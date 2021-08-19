@@ -50,8 +50,16 @@ main > .boxes {
         grid-auto-flow: row;
         text-align: center;
         row-gap: 19px;
+        width: 100%;
+    }
+    .quickBox.short .inner object, .quickBox.wide .inner object {
+        width: 48px;
+        height: auto;
+    }
+    .quickBox p {
+        font-size: .8rem;
     }
     .quickBox.short {
-        padding: 16px 5%;
+        padding: 16px 5%!important;
     }
 }

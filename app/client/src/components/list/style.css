@@ -1,5 +1,6 @@
 #list .head p {
     margin: 0;
+    color: #202046;
 }
 #list .head {
     display: grid;
@@ -11,8 +12,10 @@
     background-color: #F3F3F3;
     margin: 14px 0;
 }
-#list .head p {
-    color: #202046;
+@media (max-width: 400px) {
+    #list .head p {
+        font-size: .9rem;
+    }
 }
 #list .head .pClick {
     color: var(--green);
