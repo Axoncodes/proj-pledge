@@ -22,6 +22,11 @@
     height: 48px;
     border-radius: 50%;
 }
+.FriendItem.item .info img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
 .FriendItem .info .text {
     display: flex;
     flex-direction: column;

@@ -10,6 +10,7 @@ import PasswordReset from './views/PasswordReset';
 import EditProfile from './views/EditProfile';
 import NewPledge from './views/NewPledge';
 import IdentitVer from './views/IdentitVer';
+import PledgesRecieved from './views/PledgesRecieved';
 
 // component
 import {PrivateRoute} from './components/routes/privateRoute/PrivateRoute';
@@ -47,6 +48,7 @@ export default function App() {
           <PrivateRoute path="/new-pledge" component={NewPledge} />
           <PrivateRoute path="/identity-verification" component={IdentitVer} />
           <PrivateRoute path="/pledges/:id" component={Pledges} />
+          <PrivateRoute path="/pledge-recieved/:id" component={PledgesRecieved} />
 
         </Switch>
       </Router>

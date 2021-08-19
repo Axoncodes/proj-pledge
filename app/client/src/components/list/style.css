@@ -14,7 +14,7 @@
 #list .head p {
     color: #202046;
 }
-#list .head a {
+#list .head .pClick {
     color: var(--green);
     text-decoration: none;
     font-size: 13px;
@@ -76,6 +76,33 @@
 
 
 
+
+/* pagination */
+.pagination {
+    display: flex;
+    list-style: none;
+    column-gap: 3px;
+    padding: 0;
+    margin: 0 auto;
+}
+.pagination li:hover {
+    background-color: #3ccd90;
+}
+.pagination li {
+    width: 20px;
+    height: 20px;
+    background-color: var(--green);
+    color: #fff;
+    display: grid;
+    place-content: center;
+    padding: 3px;
+    border-radius: .3em;
+    cursor: pointer;
+    transition: all .3s;
+}
+.pagination li.active {
+    background-color: #32bc82;
+}
 
 
 

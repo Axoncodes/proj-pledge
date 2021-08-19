@@ -64,8 +64,11 @@ export default function IdentitVer() {
       const states = await profileInfo.states();
       setInputForm({
         date_of_birth: response['data']['birth_date'],
-        country: countries.names,
-        state: states.names,
+        // country: countries.names,
+        // state: states.names,
+        // city: response['data']['city'],
+        country: response['data']['country'],
+        state: response['data']['state'],
         city: response['data']['city'],
         address_line_1: response['data']['address_1'],
         address_line_2: response['data']['address_2'],
@@ -88,9 +91,9 @@ export default function IdentitVer() {
   
                 <form className="boxshadow" onSubmit={handleSubmit} >
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.date_of_birth} title="Date of birth" type="date" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.country} title="Country" type="select" options={inputForm.country} />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.city} title="City" type="text" />
-                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.state} title="State" type="select" options={inputForm.state} />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.country} title="Country" type="string" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.city} title="City" type="string" />
+                  <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.state} title="State" type="string" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.address_line_1} title="Address Line 1" type="string" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.address_line_2} title="Address Line 2" type="string" />
                   <Field valid={formErr.non_field_errors?false:true} message={formErr.non_field_errors} onChange={handleInput} value={inputForm.email_address} title="Email Address" type="email" />

@@ -3,7 +3,7 @@ import { profileInfo } from '../../../../controller/profileController'
 import person from '../../assets/images/person.jpg'
 import Box from "../box/Box"
 import './style.css'
-export default function Profile() {
+export default function Profile({classes, aboutTitle}) {
 
 
     
@@ -24,7 +24,7 @@ export default function Profile() {
 
 
     return (
-        <section id="profile" className="boxshadow" style={{paddingBottom: "28px"}}>
+        <section id="profile" className={classes} style={{paddingBottom: "28px"}}>
             <section className="info">
                 {/* <img src={profile['profile_photo']} /> */}
                 <img src={person} />
@@ -38,7 +38,7 @@ export default function Profile() {
                 </div>
             </section>
             <section id="bios">
-                <span>About</span>
+                <span>{aboutTitle}</span>
                 <section className="text">
                     {/* bios: Here we either show the full text or convert the string to array to cut it down based on the words and then convert back to string  based on the state of readmore! */}
                     {readMore?(profile['biography']?profile['biography']:''):profile['biography']?profile['biography'].split(" ").slice(0, 20).join(" "):''}

@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function DataBox({title, value}) {
+export default function DataBox({title, value, stylestyle}) {
     return(
-        <section className="boxes" style={{gridTemplateColumns: "unset", gridAutoFlow: "column" }}>
+        <section className="boxes" style={stylestyle}>
           <section style={{padding: "20px 15px"}} className="quickBox boxshadow short">
             <section className="inner">
               <object

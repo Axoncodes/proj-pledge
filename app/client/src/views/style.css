@@ -84,7 +84,15 @@
     height: 100vh;
     align-content: space-between;
 }
-
+.fullview.single {
+    grid-template-columns: unset;
+    padding: 0;
+}
+.fullview.single > .inner {
+    width: 50%;
+    margin: 0 auto;
+    min-width: 366px;
+}
 .fullview main {
     display: grid;
     row-gap: 24px;
@@ -93,10 +101,23 @@
     #sectionroot .fullview {
         background-color: #fff;
         grid-template-columns: unset;
-        /* padding: 0; */
+    }
+    #sectionroot .fullview.single > .inner {
+        width: 100%;
+        min-width: unset;
+    }
+    #sectionroot .fullview.single {
+        padding: 20px;
+        padding-top: 0;
+    }
+    #sectionroot .fullview.single main {
+        padding: 2%;
+        width: 96%;
     }
 }
-
+#sectionroot .fullview.single section#profile section.boxes {
+    display: none;
+}
 
 
 /* boxshadow */
@@ -106,8 +127,19 @@
     padding: 20px;
     height: max-content;
 }
+.centerboxshadow{
+    box-shadow: 0px 1px 20px #1e1e1e12;
+    border-radius: 1em;
+    padding: 20px;
+    height: max-content;
+}
 .noshadow {
     box-shadow: none;
+}
+@media (max-width: 500px) {
+    .boxshadow {
+        padding: 20px 3%;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -117,6 +149,17 @@
     .goFullOnMobile > * {
         width: 100%!important;
     }
+    .box .goFullOnMobile > * {
+        width: 100%!important;
+    }
+    main > .box {
+        grid-auto-flow: row!important;
+    }
+}
+
+/* halfbox */
+.halfbox {
+    width: 38%;
 }
 
 /* facebook/google */
@@ -165,6 +208,10 @@
 main > .box {
     display: grid;
     grid-auto-flow: column;
+}
+
+main > .box > * {
+    width: auto!important;
 }
 
 main > .boxFlex {

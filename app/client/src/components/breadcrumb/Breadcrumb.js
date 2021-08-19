@@ -30,9 +30,10 @@ export default function Breadcrumb({
   exitReq,
   children,
   onExit,
+  style,
 }) {
   return (
-    <section id="breadcrumb">
+    <section id="breadcrumb" style={style}>
 
       {exit ? (
         <svg
