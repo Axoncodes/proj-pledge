@@ -1,0 +1,50 @@
+#pledgeButtonGroup {
+    display: grid;
+    margin: 20px 0;
+}
+#pledgeButtonGroup .submit img {
+    width: 73px;
+}
+#pledgeButtonGroup .green {
+    background-color: var(--green);
+}
+#pledgeButtonGroup .submit {
+    width: 100%;
+    border: none;
+    padding: 17px;
+    border-radius: .7em;
+}
+#pledgeButtonGroup .quick {
+    border: none;
+    padding: 10px;
+    border-radius: 1em;
+    width: 170px;
+}
+#pledgeButtonGroup .head {
+    text-align: center;
+    font-size: 12px;
+}
+
+#pledgeButtonGroup .lightgreen {
+    background-color: #47e3a12e;
+    color: #47E3A1;
+}
+#pledgeButtonGroup .lightred {
+    background-color: #eb0b1b2e;
+    color: #EB0B1B;
+}
+#pledgeButtonGroup .lightred span {
+    color: #eb0b1b85;
+}
+#pledgeButtonGroup > .card {
+    padding: 20px 0;
+    justify-content: space-between;
+}
+#pledgeButtonGroup button .box {
+    display: grid;
+    text-align: left;
+}
+#pledgeButtonGroup button .card {
+    align-items: center;
+    justify-content: center;
+}

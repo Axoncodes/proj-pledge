@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="times-circle-line" transform="translate(-2 -2)">
+    <path id="Path_11" data-name="Path 11" d="M15.63,14.7l2.43-2.43a.5.5,0,0,0-.7-.7l-2.43,2.4L12.48,11.53a.5.5,0,0,0-.7.7l2.44,2.47-2.39,2.36a.5.5,0,1,0,.7.7l2.385-2.385,2.37,2.37a.5.5,0,0,0,.7-.7Z" transform="translate(-4.825 -4.705)" fill="#eb0b1b"/>
+    <path id="Path_12" data-name="Path 12" d="M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18ZM10,3a7,7,0,1,0,7,7A7,7,0,0,0,10,3Z" fill="#eb0b1b"/>
+  </g>
+</svg>
