@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Receive" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Receive_Background_" data-name="Receive (Background)" width="24" height="24" fill="none"/>
+  <path id="Combined_Shape" data-name="Combined Shape" d="M2.381,20A2.38,2.38,0,0,1,0,17.619V10.476A2.38,2.38,0,0,1,2.381,8.1H4.467A1.4,1.4,0,0,1,5.838,9.129a4.285,4.285,0,0,0,8.323,0A1.4,1.4,0,0,1,15.533,8.1h1.748A2.476,2.476,0,0,1,20,10.476v7.143A2.38,2.38,0,0,1,17.619,20ZM9.328,9.724,5.762,6.162a.953.953,0,0,1,.671-1.629H8.1V.952A.953.953,0,0,1,9.048,0h1.905a.953.953,0,0,1,.952.952V4.533h1.661a.952.952,0,0,1,.671,1.629L10.671,9.724a.951.951,0,0,1-1.343,0Z" transform="translate(2 2)" fill="#ffbf13"/>
+</svg>
