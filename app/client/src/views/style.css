@@ -115,7 +115,7 @@
     }
     #sectionroot .fullview.single main {
         padding: 2%;
-        width: 96%;
+        width: auto;
     }
 }
 @media (max-width: 400px) {

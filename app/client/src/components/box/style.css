@@ -46,6 +46,12 @@ main > .boxes {
     }
 }
 @media (max-width:500px) {
+    main > .boxes {
+        column-gap: 0;
+    }
+    .quickBox.doubleBlack p.title {
+        font-size: 12px!important;
+    }
     .quickBox.short .inner {
         display: grid;
         grid-auto-flow: row;
@@ -81,7 +87,7 @@ main > .boxes {
 .quickBox.doubleBlack p {
     color: rgb(32, 32, 70)!important;
 }
-.quickBox.doubleBlack p.title {
+.quickBox.doubleBlack .title {
     font-size: 13px!important;
 }
 
