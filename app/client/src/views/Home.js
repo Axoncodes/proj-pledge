@@ -15,7 +15,7 @@ export default function Home() {
 			<main>
 				<Header />
 				<Breadcrumb current="Overview" />
-				<Profile aboutTitle="About" classes="boxshadow" />
+				<Profile stylestyle={{paddingBottom: "28px"}} aboutTitle="About" classes="boxshadow" />
 				<section className="boxes">
 					<Box link="/new-pledge" style="padding boxshadow short" text="New Pledge Proposal" icon="newproposal.svg"/>
 					<Box link="/" style="padding boxshadow short" text="Statements and Documents" icon="statement.svg"/>

@@ -3,7 +3,7 @@ import { profileInfo } from '../../../../controller/profileController'
 import person from '../../assets/images/person.jpg'
 import Box from "../box/Box"
 import './style.css'
-export default function Profile({classes, aboutTitle}) {
+export default function Profile({classes, aboutTitle, stylestyle}) {
 
 
     
@@ -24,7 +24,7 @@ export default function Profile({classes, aboutTitle}) {
 
 
     return (
-        <section id="profile" className={classes} style={{paddingBottom: "28px"}}>
+        <section id="profile" className={classes} style={stylestyle} >
             <section className="info">
                 {/* <img src={profile['profile_photo']} /> */}
                 <img src={person} />

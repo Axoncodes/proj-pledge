@@ -21,10 +21,10 @@ export default function Pledges() {
 
           <section id="pledgesStatus" className="" >
 
-            <DataBox title="Total Amount" value="$12351" />
-            <DataBox title="Remaining Balance" value="$5812" />
-            <DataBox title="Monthly Payment" value="$612" />
-            <DataBox title="Interest Rate" value="6%" />
+            <DataBox icon="pocket.svg" classes="quickBox boxshadow short" title="Total Amount" value="$12351" />
+            <DataBox icon="pocket.svg" classes="quickBox boxshadow short" title="Remaining Balance" value="$5812" />
+            <DataBox icon="pocket.svg" classes="quickBox boxshadow short" title="Monthly Payment" value="$612" />
+            <DataBox icon="pocket.svg" classes="quickBox boxshadow short" title="Interest Rate" value="6%" />
 
           </section>
 

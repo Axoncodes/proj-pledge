@@ -133,7 +133,7 @@
     }
     .field .image object {
         width: 23px;
-        height: auto;
+        max-height: 23px;
     }
     .field .image {
         width: 44px;

@@ -12,6 +12,7 @@
 
 .quickBox.center .inner {
     margin: 0 auto;
+    text-align: center;
 }
 
 .quickBox p {
@@ -62,4 +63,29 @@ main > .boxes {
     .quickBox.short {
         padding: 16px 5%!important;
     }
+}
+
+
+/* boldValue */
+.quickBox.boldValue p.text {
+    font-size: 34px!important;
+    color: rgb(32, 32, 70)!important;
+}
+.quickBox.boldValue p.title {
+    font-size: 14px!important;
+    color: rgb(156, 162, 170)!important;
+}
+
+
+/* doubleBlack */
+.quickBox.doubleBlack p {
+    color: rgb(32, 32, 70)!important;
+}
+.quickBox.doubleBlack p.title {
+    font-size: 13px!important;
+}
+
+/* left */
+.quickBox.left .inner {
+    text-align: left;
 }
